@@ -22,11 +22,11 @@ public class UserBase {
        if(StrUtil.isEmpty(userId)){
            throw BusinessException.buildException(CodeInfo.STATUS_CODE_500, "參數錯誤");
        }
-       UserInfo one = userInfoService.lambdaQuery().eq(UserInfo::getUserid, userId).one();
+       UserInfo one = userInfoService.lambdaQuery().eq(UserInfo::getUserId, userId).one();
        if(one == null){
            throw BusinessException.buildException(CodeInfo.STATUS_CODE_500, "用戶不存在");
        }
-       UserFund one1 = userFundService.lambdaQuery().eq(UserFund::getUserid, userId).one();
+       UserFund one1 = userFundService.lambdaQuery().eq(UserFund::getUserId, userId).one();
        if(one1 == null){
            throw BusinessException.buildException(CodeInfo.STATUS_CODE_500, "用戶不存在");
        }

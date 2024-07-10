@@ -6,41 +6,42 @@
 
     <resultMap id="BaseResultMap" type="com.admin.out.api.newadminoutapi.dao.domain.UserInfo">
             <id property="id" column="id" jdbcType="INTEGER"/>
-            <result property="userid" column="userId" jdbcType="VARCHAR"/>
-            <result property="username" column="userName" jdbcType="VARCHAR"/>
+            <result property="userId" column="userId" jdbcType="VARCHAR"/>
+            <result property="userName" column="userName" jdbcType="VARCHAR"/>
             <result property="password" column="password" jdbcType="VARCHAR"/>
-            <result property="paypasword" column="payPasword" jdbcType="VARCHAR"/>
+            <result property="payPasword" column="payPasword" jdbcType="VARCHAR"/>
             <result property="salt" column="salt" jdbcType="VARCHAR"/>
-            <result property="usertype" column="userType" jdbcType="INTEGER"/>
+            <result property="userType" column="userType" jdbcType="INTEGER"/>
             <result property="switchs" column="switchs" jdbcType="INTEGER"/>
-            <result property="usernode" column="userNode" jdbcType="VARCHAR"/>
+            <result property="userNode" column="userNode" jdbcType="VARCHAR"/>
             <result property="email" column="email" jdbcType="VARCHAR"/>
             <result property="agent" column="agent" jdbcType="VARCHAR"/>
-            <result property="isagent" column="isAgent" jdbcType="CHAR"/>
+            <result property="isAgent" column="isAgent" jdbcType="CHAR"/>
             <result property="credit" column="credit" jdbcType="DECIMAL"/>
-            <result property="receiveorderstate" column="receiveOrderState" jdbcType="INTEGER"/>
-            <result property="remitorderstate" column="remitOrderState" jdbcType="INTEGER"/>
-            <result property="qq" column="QQ" jdbcType="VARCHAR"/>
+            <result property="receiveOrderState" column="receiveOrderState" jdbcType="INTEGER"/>
+            <result property="remitOrderState" column="remitOrderState" jdbcType="INTEGER"/>
+            <result property="QQ" column="QQ" jdbcType="VARCHAR"/>
             <result property="telegram" column="telegram" jdbcType="VARCHAR"/>
             <result property="skype" column="skype" jdbcType="VARCHAR"/>
-            <result property="createtime" column="createTime" jdbcType="TIMESTAMP"/>
-            <result property="submittime" column="submitTime" jdbcType="TIMESTAMP"/>
+            <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
+            <result property="submitTime" column="submitTime" jdbcType="TIMESTAMP"/>
             <result property="status" column="status" jdbcType="INTEGER"/>
-            <result property="privatekey" column="privateKey" jdbcType="VARCHAR"/>
-            <result property="publickey" column="publicKey" jdbcType="VARCHAR"/>
-            <result property="minamount" column="minAmount" jdbcType="DECIMAL"/>
-            <result property="maxamount" column="maxAmount" jdbcType="DECIMAL"/>
-            <result property="totalamount" column="totalAmount" jdbcType="DECIMAL"/>
-            <result property="timestotal" column="timesTotal" jdbcType="INTEGER"/>
-            <result property="starttime" column="startTime" jdbcType="VARCHAR"/>
-            <result property="endtime" column="endTime" jdbcType="VARCHAR"/>
+            <result property="privateKey" column="privateKey" jdbcType="VARCHAR"/>
+            <result property="publicKey" column="publicKey" jdbcType="VARCHAR"/>
+            <result property="minAmount" column="minAmount" jdbcType="DECIMAL"/>
+            <result property="maxAmount" column="maxAmount" jdbcType="DECIMAL"/>
+            <result property="totalAmount" column="totalAmount" jdbcType="DECIMAL"/>
+            <result property="timesTotal" column="timesTotal" jdbcType="INTEGER"/>
+            <result property="startTime" column="startTime" jdbcType="VARCHAR"/>
+            <result property="endTime" column="endTime" jdbcType="VARCHAR"/>
             <result property="witip" column="witip" jdbcType="VARCHAR"/>
-            <result property="queuelist" column="queueList" jdbcType="VARCHAR"/>
-            <result property="dealurl" column="dealUrl" jdbcType="VARCHAR"/>
-            <result property="qrrechargelist" column="qrRechargeList" jdbcType="VARCHAR"/>
-            <result property="autowit" column="autoWit" jdbcType="INTEGER"/>
-            <result property="enterwitopen" column="enterWitOpen" jdbcType="INTEGER"/>
-            <result property="balanceurl" column="balanceUrl" jdbcType="VARCHAR"/>
+            <result property="queueList" column="queueList" jdbcType="VARCHAR"/>
+            <result property="dealUrl" column="dealUrl" jdbcType="VARCHAR"/>
+            <result property="qrRechargeList" column="qrRechargeList" jdbcType="VARCHAR"/>
+            <result property="autoWit" column="autoWit" jdbcType="INTEGER"/>
+            <result property="enterWitOpen" column="enterWitOpen" jdbcType="INTEGER"/>
+            <result property="interFace" column="interFace" jdbcType="VARCHAR"/>
+            <result property="balanceUrl" column="balanceUrl" jdbcType="VARCHAR"/>
             <result property="autowitstatus" column="autowitstatus" jdbcType="INTEGER"/>
     </resultMap>
 
@@ -56,7 +57,7 @@
         maxAmount,totalAmount,timesTotal,
         startTime,endTime,witip,
         queueList,dealUrl,qrRechargeList,
-        autoWit,enterWitOpen,
+        autoWit,enterWitOpen,interFace,
         balanceUrl,autowitstatus
     </sql>
 </mapper>

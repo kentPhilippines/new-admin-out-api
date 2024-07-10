@@ -9,6 +9,9 @@ import com.admin.out.api.newadminoutapi.server.RunOrderBase;
 import com.admin.out.api.newadminoutapi.server.UserBase;
 import com.admin.out.api.newadminoutapi.server.WithdrawBase;
 import com.admin.out.api.newadminoutapi.vo.Result;
+import com.admin.out.api.newadminoutapi.vo.bean.DealOrderBean;
+import com.admin.out.api.newadminoutapi.vo.bean.RunBean;
+import com.admin.out.api.newadminoutapi.vo.bean.WitBean;
 import com.admin.out.api.newadminoutapi.vo.page.ReqPage;
 import com.admin.out.api.newadminoutapi.vo.page.ResPage;
 import lombok.RequiredArgsConstructor;
@@ -37,7 +40,7 @@ public class AdminApi {
         return Result.ok(userInfoResponseVoResPage);
     }
     @PostMapping("/orderdeal/list")
-    public Result<List<DealOrderApp>> list(@RequestBody @Valid DealOrderApp vo) {
+    public Result<List<DealOrderApp>> list(@RequestBody @Valid DealOrderBean vo) {
         log.info("adminApi with request:{}", vo.toString());
         List<DealOrderApp> userInfoResponseVoResPage = dealOrderAppBase.queryList(vo);
         return Result.ok(userInfoResponseVoResPage);
@@ -49,7 +52,7 @@ public class AdminApi {
         return Result.ok(runOrderResPage);
     }
     @PostMapping("/rurnning/list")
-    public Result<List<RunOrder>> list(@RequestBody @Valid RunOrder vo) {
+    public Result<List<RunOrder>> list(@RequestBody @Valid RunBean vo) {
         log.info("adminApi with request:{}", vo.toString());
         List<RunOrder> userInfoResponseVoResPage = runOrderBase.queryList(vo);
         return Result.ok(userInfoResponseVoResPage);
@@ -62,7 +65,7 @@ public class AdminApi {
         return Result.ok(runOrderResPage);
     }
     @PostMapping("/orderWit/list")
-    public Result<List<Withdraw>> page(@RequestBody @Valid Withdraw vo) {
+    public Result<List<Withdraw>> list(@RequestBody @Valid WitBean vo ) {
         log.info("adminApi with request:{}", vo.toString());
         List<Withdraw> userInfoResponseVoResPage = withdrawBase.queryList(vo);
         return Result.ok(userInfoResponseVoResPage);

@@ -1,6 +1,5 @@
 package com.admin.out.api.newadminoutapi.dao.domain;
 
-import com.admin.out.api.newadminoutapi.dao.service.UserFundService;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -18,152 +17,181 @@ public class UserFund implements Serializable {
     /**
      * 数据id
      */
-    @TableId(type = IdType.AUTO)
+    @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
     /**
      * 账户id【登录账户】
      */
-    private String userid;
+    @TableField(value = "userId")
+    private String userId;
 
     /**
      * 账户昵称【登录账户名】
      */
-    private String username;
+    @TableField(value = "userName")
+    private String userName;
 
     /**
      * 现金账户【当前可取现】
      */
-    private BigDecimal cashbalance;
+    @TableField(value = "cashBalance")
+    private BigDecimal cashBalance;
 
     /**
      * 充值点数
      */
-    private BigDecimal rechargenumber;
+    @TableField(value = "rechargeNumber")
+    private BigDecimal rechargeNumber;
 
     /**
      * 冻结账户
      */
-    private BigDecimal freezebalance;
+    @TableField(value = "freezeBalance")
+    private BigDecimal freezeBalance;
 
     /**
      * 可取现账户金额【码商账户余额=现金账户+充值点数-冻结金额】
      */
-    private BigDecimal accountbalance;
+    @TableField(value = "accountBalance")
+    private BigDecimal accountBalance;
 
     /**
      * 累计交易额
      */
-    private BigDecimal sumdealamount;
+    @TableField(value = "sumDealAmount")
+    private BigDecimal sumDealAmount;
 
     /**
      * 累计充值金额【充值成功时统计记录】
      */
-    private BigDecimal sumrechargeamount;
+    @TableField(value = "sumRechargeAmount")
+    private BigDecimal sumRechargeAmount;
 
     /**
      * 累计利润金额
      */
-    private BigDecimal sumprofit;
+    @TableField(value = "sumProfit")
+    private BigDecimal sumProfit;
 
     /**
      * 累计代付金额
      */
-    private BigDecimal sumwitamount;
+    @TableField(value = "sumWitAmount")
+    private BigDecimal sumWitAmount;
 
     /**
      * 累计代理商利润【如果当前账户为商户则该数据为0】
      */
-    private BigDecimal sumagentprofit;
+    @TableField(value = "sumAgentProfit")
+    private BigDecimal sumAgentProfit;
 
     /**
      * 累计接单笔数
      */
-    private Integer sumordercount;
+    @TableField(value = "sumOrderCount")
+    private Integer sumOrderCount;
 
     /**
      * 当日代付金额
      */
-    private Long todaywitamount;
+    @TableField(value = "todayWitAmount")
+    private Long todayWitAmount;
 
     /**
      * 当日接单金额
      */
-    private BigDecimal todaydealamount;
+    @TableField(value = "todayDealAmount")
+    private BigDecimal todayDealAmount;
 
     /**
      * 当日接单利润【代理利润+接单利润=当日利润】
      */
-    private BigDecimal todayprofit;
+    @TableField(value = "todayProfit")
+    private BigDecimal todayProfit;
 
     /**
      * 当日接单笔数
      */
-    private Integer todayordercount;
+    @TableField(value = "todayOrderCount")
+    private Integer todayOrderCount;
 
     /**
      * 当日代理商利润【如果当前账户为商户则该数据为0】
      */
-    private BigDecimal todayagentprofit;
+    @TableField(value = "todayAgentProfit")
+    private BigDecimal todayAgentProfit;
 
     /**
      * 用户类型,商户1 码商2渠道商户3
      */
-    private String usertype;
+    @TableField(value = "userType")
+    private String userType;
 
     /**
      * 代理商id【如果存在代理商则存在数据,如果不存在代理商则为null】
      */
+    @TableField(value = "agent")
     private String agent;
 
     /**
      * 是否为代理商:1代理商2普通码商3渠道商【分润结算类型看用户类型userType】
      */
-    private String isagent;
+    @TableField(value = "isAgent")
+    private String isAgent;
 
     /**
      * 数据创建时间
      */
-    private Date createtime;
+    @TableField(value = "createTime")
+    private Date createTime;
 
     /**
      * 最后一次数据修改时间
      */
-    private Date submittime;
+    @TableField(value = "submitTime")
+    private Date submitTime;
 
     /**
      * 数据是否可用:1数据可用2数据无用
      */
+    @TableField(value = "status")
     private Integer status;
 
     /**
      * 数据版本号【数据修改锁】
      */
+    @TableField(value = "version")
     private Integer version;
 
     /**
      * 货币类型
      */
+    @TableField(value = "currency")
     private String currency;
 
     /**
      * 授权额度
      */
+    @TableField(value = "quota")
     private BigDecimal quota;
 
     /**
      * 卡商接单历史
      */
-    private BigDecimal sumotherwitamount;
+    @TableField(value = "sumOtherWitAmount")
+    private BigDecimal sumOtherWitAmount;
 
     /**
      * 卡商当日接单历史
      */
-    private BigDecimal todayotherwitamount;
+    @TableField(value = "todayOtherWitAmount")
+    private BigDecimal todayOtherWitAmount;
 
     /**
      * 
      */
+    @TableField(value = "deposit")
     private BigDecimal deposit;
 
     @TableField(exist = false)
@@ -186,253 +214,253 @@ public class UserFund implements Serializable {
     /**
      * 账户id【登录账户】
      */
-    public String getUserid() {
-        return userid;
+    public String getUserId() {
+        return userId;
     }
 
     /**
      * 账户id【登录账户】
      */
-    public void setUserid(String userid) {
-        this.userid = userid;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     /**
      * 账户昵称【登录账户名】
      */
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
     /**
      * 账户昵称【登录账户名】
      */
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     /**
      * 现金账户【当前可取现】
      */
-    public BigDecimal getCashbalance() {
-        return cashbalance;
+    public BigDecimal getCashBalance() {
+        return cashBalance;
     }
 
     /**
      * 现金账户【当前可取现】
      */
-    public void setCashbalance(BigDecimal cashbalance) {
-        this.cashbalance = cashbalance;
+    public void setCashBalance(BigDecimal cashBalance) {
+        this.cashBalance = cashBalance;
     }
 
     /**
      * 充值点数
      */
-    public BigDecimal getRechargenumber() {
-        return rechargenumber;
+    public BigDecimal getRechargeNumber() {
+        return rechargeNumber;
     }
 
     /**
      * 充值点数
      */
-    public void setRechargenumber(BigDecimal rechargenumber) {
-        this.rechargenumber = rechargenumber;
+    public void setRechargeNumber(BigDecimal rechargeNumber) {
+        this.rechargeNumber = rechargeNumber;
     }
 
     /**
      * 冻结账户
      */
-    public BigDecimal getFreezebalance() {
-        return freezebalance;
+    public BigDecimal getFreezeBalance() {
+        return freezeBalance;
     }
 
     /**
      * 冻结账户
      */
-    public void setFreezebalance(BigDecimal freezebalance) {
-        this.freezebalance = freezebalance;
+    public void setFreezeBalance(BigDecimal freezeBalance) {
+        this.freezeBalance = freezeBalance;
     }
 
     /**
      * 可取现账户金额【码商账户余额=现金账户+充值点数-冻结金额】
      */
-    public BigDecimal getAccountbalance() {
-        return accountbalance;
+    public BigDecimal getAccountBalance() {
+        return accountBalance;
     }
 
     /**
      * 可取现账户金额【码商账户余额=现金账户+充值点数-冻结金额】
      */
-    public void setAccountbalance(BigDecimal accountbalance) {
-        this.accountbalance = accountbalance;
+    public void setAccountBalance(BigDecimal accountBalance) {
+        this.accountBalance = accountBalance;
     }
 
     /**
      * 累计交易额
      */
-    public BigDecimal getSumdealamount() {
-        return sumdealamount;
+    public BigDecimal getSumDealAmount() {
+        return sumDealAmount;
     }
 
     /**
      * 累计交易额
      */
-    public void setSumdealamount(BigDecimal sumdealamount) {
-        this.sumdealamount = sumdealamount;
+    public void setSumDealAmount(BigDecimal sumDealAmount) {
+        this.sumDealAmount = sumDealAmount;
     }
 
     /**
      * 累计充值金额【充值成功时统计记录】
      */
-    public BigDecimal getSumrechargeamount() {
-        return sumrechargeamount;
+    public BigDecimal getSumRechargeAmount() {
+        return sumRechargeAmount;
     }
 
     /**
      * 累计充值金额【充值成功时统计记录】
      */
-    public void setSumrechargeamount(BigDecimal sumrechargeamount) {
-        this.sumrechargeamount = sumrechargeamount;
+    public void setSumRechargeAmount(BigDecimal sumRechargeAmount) {
+        this.sumRechargeAmount = sumRechargeAmount;
     }
 
     /**
      * 累计利润金额
      */
-    public BigDecimal getSumprofit() {
-        return sumprofit;
+    public BigDecimal getSumProfit() {
+        return sumProfit;
     }
 
     /**
      * 累计利润金额
      */
-    public void setSumprofit(BigDecimal sumprofit) {
-        this.sumprofit = sumprofit;
+    public void setSumProfit(BigDecimal sumProfit) {
+        this.sumProfit = sumProfit;
     }
 
     /**
      * 累计代付金额
      */
-    public BigDecimal getSumwitamount() {
-        return sumwitamount;
+    public BigDecimal getSumWitAmount() {
+        return sumWitAmount;
     }
 
     /**
      * 累计代付金额
      */
-    public void setSumwitamount(BigDecimal sumwitamount) {
-        this.sumwitamount = sumwitamount;
+    public void setSumWitAmount(BigDecimal sumWitAmount) {
+        this.sumWitAmount = sumWitAmount;
     }
 
     /**
      * 累计代理商利润【如果当前账户为商户则该数据为0】
      */
-    public BigDecimal getSumagentprofit() {
-        return sumagentprofit;
+    public BigDecimal getSumAgentProfit() {
+        return sumAgentProfit;
     }
 
     /**
      * 累计代理商利润【如果当前账户为商户则该数据为0】
      */
-    public void setSumagentprofit(BigDecimal sumagentprofit) {
-        this.sumagentprofit = sumagentprofit;
+    public void setSumAgentProfit(BigDecimal sumAgentProfit) {
+        this.sumAgentProfit = sumAgentProfit;
     }
 
     /**
      * 累计接单笔数
      */
-    public Integer getSumordercount() {
-        return sumordercount;
+    public Integer getSumOrderCount() {
+        return sumOrderCount;
     }
 
     /**
      * 累计接单笔数
      */
-    public void setSumordercount(Integer sumordercount) {
-        this.sumordercount = sumordercount;
+    public void setSumOrderCount(Integer sumOrderCount) {
+        this.sumOrderCount = sumOrderCount;
     }
 
     /**
      * 当日代付金额
      */
-    public Long getTodaywitamount() {
-        return todaywitamount;
+    public Long getTodayWitAmount() {
+        return todayWitAmount;
     }
 
     /**
      * 当日代付金额
      */
-    public void setTodaywitamount(Long todaywitamount) {
-        this.todaywitamount = todaywitamount;
+    public void setTodayWitAmount(Long todayWitAmount) {
+        this.todayWitAmount = todayWitAmount;
     }
 
     /**
      * 当日接单金额
      */
-    public BigDecimal getTodaydealamount() {
-        return todaydealamount;
+    public BigDecimal getTodayDealAmount() {
+        return todayDealAmount;
     }
 
     /**
      * 当日接单金额
      */
-    public void setTodaydealamount(BigDecimal todaydealamount) {
-        this.todaydealamount = todaydealamount;
+    public void setTodayDealAmount(BigDecimal todayDealAmount) {
+        this.todayDealAmount = todayDealAmount;
     }
 
     /**
      * 当日接单利润【代理利润+接单利润=当日利润】
      */
-    public BigDecimal getTodayprofit() {
-        return todayprofit;
+    public BigDecimal getTodayProfit() {
+        return todayProfit;
     }
 
     /**
      * 当日接单利润【代理利润+接单利润=当日利润】
      */
-    public void setTodayprofit(BigDecimal todayprofit) {
-        this.todayprofit = todayprofit;
+    public void setTodayProfit(BigDecimal todayProfit) {
+        this.todayProfit = todayProfit;
     }
 
     /**
      * 当日接单笔数
      */
-    public Integer getTodayordercount() {
-        return todayordercount;
+    public Integer getTodayOrderCount() {
+        return todayOrderCount;
     }
 
     /**
      * 当日接单笔数
      */
-    public void setTodayordercount(Integer todayordercount) {
-        this.todayordercount = todayordercount;
+    public void setTodayOrderCount(Integer todayOrderCount) {
+        this.todayOrderCount = todayOrderCount;
     }
 
     /**
      * 当日代理商利润【如果当前账户为商户则该数据为0】
      */
-    public BigDecimal getTodayagentprofit() {
-        return todayagentprofit;
+    public BigDecimal getTodayAgentProfit() {
+        return todayAgentProfit;
     }
 
     /**
      * 当日代理商利润【如果当前账户为商户则该数据为0】
      */
-    public void setTodayagentprofit(BigDecimal todayagentprofit) {
-        this.todayagentprofit = todayagentprofit;
+    public void setTodayAgentProfit(BigDecimal todayAgentProfit) {
+        this.todayAgentProfit = todayAgentProfit;
     }
 
     /**
      * 用户类型,商户1 码商2渠道商户3
      */
-    public String getUsertype() {
-        return usertype;
+    public String getUserType() {
+        return userType;
     }
 
     /**
      * 用户类型,商户1 码商2渠道商户3
      */
-    public void setUsertype(String usertype) {
-        this.usertype = usertype;
+    public void setUserType(String userType) {
+        this.userType = userType;
     }
 
     /**
@@ -452,43 +480,43 @@ public class UserFund implements Serializable {
     /**
      * 是否为代理商:1代理商2普通码商3渠道商【分润结算类型看用户类型userType】
      */
-    public String getIsagent() {
-        return isagent;
+    public String getIsAgent() {
+        return isAgent;
     }
 
     /**
      * 是否为代理商:1代理商2普通码商3渠道商【分润结算类型看用户类型userType】
      */
-    public void setIsagent(String isagent) {
-        this.isagent = isagent;
+    public void setIsAgent(String isAgent) {
+        this.isAgent = isAgent;
     }
 
     /**
      * 数据创建时间
      */
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
     /**
      * 数据创建时间
      */
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     /**
      * 最后一次数据修改时间
      */
-    public Date getSubmittime() {
-        return submittime;
+    public Date getSubmitTime() {
+        return submitTime;
     }
 
     /**
      * 最后一次数据修改时间
      */
-    public void setSubmittime(Date submittime) {
-        this.submittime = submittime;
+    public void setSubmitTime(Date submitTime) {
+        this.submitTime = submitTime;
     }
 
     /**
@@ -550,29 +578,29 @@ public class UserFund implements Serializable {
     /**
      * 卡商接单历史
      */
-    public BigDecimal getSumotherwitamount() {
-        return sumotherwitamount;
+    public BigDecimal getSumOtherWitAmount() {
+        return sumOtherWitAmount;
     }
 
     /**
      * 卡商接单历史
      */
-    public void setSumotherwitamount(BigDecimal sumotherwitamount) {
-        this.sumotherwitamount = sumotherwitamount;
+    public void setSumOtherWitAmount(BigDecimal sumOtherWitAmount) {
+        this.sumOtherWitAmount = sumOtherWitAmount;
     }
 
     /**
      * 卡商当日接单历史
      */
-    public BigDecimal getTodayotherwitamount() {
-        return todayotherwitamount;
+    public BigDecimal getTodayOtherWitAmount() {
+        return todayOtherWitAmount;
     }
 
     /**
      * 卡商当日接单历史
      */
-    public void setTodayotherwitamount(BigDecimal todayotherwitamount) {
-        this.todayotherwitamount = todayotherwitamount;
+    public void setTodayOtherWitAmount(BigDecimal todayOtherWitAmount) {
+        this.todayOtherWitAmount = todayOtherWitAmount;
     }
 
     /**
@@ -602,34 +630,34 @@ public class UserFund implements Serializable {
         }
         UserFund other = (UserFund) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getUserid() == null ? other.getUserid() == null : this.getUserid().equals(other.getUserid()))
-            && (this.getUsername() == null ? other.getUsername() == null : this.getUsername().equals(other.getUsername()))
-            && (this.getCashbalance() == null ? other.getCashbalance() == null : this.getCashbalance().equals(other.getCashbalance()))
-            && (this.getRechargenumber() == null ? other.getRechargenumber() == null : this.getRechargenumber().equals(other.getRechargenumber()))
-            && (this.getFreezebalance() == null ? other.getFreezebalance() == null : this.getFreezebalance().equals(other.getFreezebalance()))
-            && (this.getAccountbalance() == null ? other.getAccountbalance() == null : this.getAccountbalance().equals(other.getAccountbalance()))
-            && (this.getSumdealamount() == null ? other.getSumdealamount() == null : this.getSumdealamount().equals(other.getSumdealamount()))
-            && (this.getSumrechargeamount() == null ? other.getSumrechargeamount() == null : this.getSumrechargeamount().equals(other.getSumrechargeamount()))
-            && (this.getSumprofit() == null ? other.getSumprofit() == null : this.getSumprofit().equals(other.getSumprofit()))
-            && (this.getSumwitamount() == null ? other.getSumwitamount() == null : this.getSumwitamount().equals(other.getSumwitamount()))
-            && (this.getSumagentprofit() == null ? other.getSumagentprofit() == null : this.getSumagentprofit().equals(other.getSumagentprofit()))
-            && (this.getSumordercount() == null ? other.getSumordercount() == null : this.getSumordercount().equals(other.getSumordercount()))
-            && (this.getTodaywitamount() == null ? other.getTodaywitamount() == null : this.getTodaywitamount().equals(other.getTodaywitamount()))
-            && (this.getTodaydealamount() == null ? other.getTodaydealamount() == null : this.getTodaydealamount().equals(other.getTodaydealamount()))
-            && (this.getTodayprofit() == null ? other.getTodayprofit() == null : this.getTodayprofit().equals(other.getTodayprofit()))
-            && (this.getTodayordercount() == null ? other.getTodayordercount() == null : this.getTodayordercount().equals(other.getTodayordercount()))
-            && (this.getTodayagentprofit() == null ? other.getTodayagentprofit() == null : this.getTodayagentprofit().equals(other.getTodayagentprofit()))
-            && (this.getUsertype() == null ? other.getUsertype() == null : this.getUsertype().equals(other.getUsertype()))
+            && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
+            && (this.getUserName() == null ? other.getUserName() == null : this.getUserName().equals(other.getUserName()))
+            && (this.getCashBalance() == null ? other.getCashBalance() == null : this.getCashBalance().equals(other.getCashBalance()))
+            && (this.getRechargeNumber() == null ? other.getRechargeNumber() == null : this.getRechargeNumber().equals(other.getRechargeNumber()))
+            && (this.getFreezeBalance() == null ? other.getFreezeBalance() == null : this.getFreezeBalance().equals(other.getFreezeBalance()))
+            && (this.getAccountBalance() == null ? other.getAccountBalance() == null : this.getAccountBalance().equals(other.getAccountBalance()))
+            && (this.getSumDealAmount() == null ? other.getSumDealAmount() == null : this.getSumDealAmount().equals(other.getSumDealAmount()))
+            && (this.getSumRechargeAmount() == null ? other.getSumRechargeAmount() == null : this.getSumRechargeAmount().equals(other.getSumRechargeAmount()))
+            && (this.getSumProfit() == null ? other.getSumProfit() == null : this.getSumProfit().equals(other.getSumProfit()))
+            && (this.getSumWitAmount() == null ? other.getSumWitAmount() == null : this.getSumWitAmount().equals(other.getSumWitAmount()))
+            && (this.getSumAgentProfit() == null ? other.getSumAgentProfit() == null : this.getSumAgentProfit().equals(other.getSumAgentProfit()))
+            && (this.getSumOrderCount() == null ? other.getSumOrderCount() == null : this.getSumOrderCount().equals(other.getSumOrderCount()))
+            && (this.getTodayWitAmount() == null ? other.getTodayWitAmount() == null : this.getTodayWitAmount().equals(other.getTodayWitAmount()))
+            && (this.getTodayDealAmount() == null ? other.getTodayDealAmount() == null : this.getTodayDealAmount().equals(other.getTodayDealAmount()))
+            && (this.getTodayProfit() == null ? other.getTodayProfit() == null : this.getTodayProfit().equals(other.getTodayProfit()))
+            && (this.getTodayOrderCount() == null ? other.getTodayOrderCount() == null : this.getTodayOrderCount().equals(other.getTodayOrderCount()))
+            && (this.getTodayAgentProfit() == null ? other.getTodayAgentProfit() == null : this.getTodayAgentProfit().equals(other.getTodayAgentProfit()))
+            && (this.getUserType() == null ? other.getUserType() == null : this.getUserType().equals(other.getUserType()))
             && (this.getAgent() == null ? other.getAgent() == null : this.getAgent().equals(other.getAgent()))
-            && (this.getIsagent() == null ? other.getIsagent() == null : this.getIsagent().equals(other.getIsagent()))
-            && (this.getCreatetime() == null ? other.getCreatetime() == null : this.getCreatetime().equals(other.getCreatetime()))
-            && (this.getSubmittime() == null ? other.getSubmittime() == null : this.getSubmittime().equals(other.getSubmittime()))
+            && (this.getIsAgent() == null ? other.getIsAgent() == null : this.getIsAgent().equals(other.getIsAgent()))
+            && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
+            && (this.getSubmitTime() == null ? other.getSubmitTime() == null : this.getSubmitTime().equals(other.getSubmitTime()))
             && (this.getStatus() == null ? other.getStatus() == null : this.getStatus().equals(other.getStatus()))
             && (this.getVersion() == null ? other.getVersion() == null : this.getVersion().equals(other.getVersion()))
             && (this.getCurrency() == null ? other.getCurrency() == null : this.getCurrency().equals(other.getCurrency()))
             && (this.getQuota() == null ? other.getQuota() == null : this.getQuota().equals(other.getQuota()))
-            && (this.getSumotherwitamount() == null ? other.getSumotherwitamount() == null : this.getSumotherwitamount().equals(other.getSumotherwitamount()))
-            && (this.getTodayotherwitamount() == null ? other.getTodayotherwitamount() == null : this.getTodayotherwitamount().equals(other.getTodayotherwitamount()))
+            && (this.getSumOtherWitAmount() == null ? other.getSumOtherWitAmount() == null : this.getSumOtherWitAmount().equals(other.getSumOtherWitAmount()))
+            && (this.getTodayOtherWitAmount() == null ? other.getTodayOtherWitAmount() == null : this.getTodayOtherWitAmount().equals(other.getTodayOtherWitAmount()))
             && (this.getDeposit() == null ? other.getDeposit() == null : this.getDeposit().equals(other.getDeposit()));
     }
 
@@ -638,34 +666,34 @@ public class UserFund implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
-        result = prime * result + ((getUserid() == null) ? 0 : getUserid().hashCode());
-        result = prime * result + ((getUsername() == null) ? 0 : getUsername().hashCode());
-        result = prime * result + ((getCashbalance() == null) ? 0 : getCashbalance().hashCode());
-        result = prime * result + ((getRechargenumber() == null) ? 0 : getRechargenumber().hashCode());
-        result = prime * result + ((getFreezebalance() == null) ? 0 : getFreezebalance().hashCode());
-        result = prime * result + ((getAccountbalance() == null) ? 0 : getAccountbalance().hashCode());
-        result = prime * result + ((getSumdealamount() == null) ? 0 : getSumdealamount().hashCode());
-        result = prime * result + ((getSumrechargeamount() == null) ? 0 : getSumrechargeamount().hashCode());
-        result = prime * result + ((getSumprofit() == null) ? 0 : getSumprofit().hashCode());
-        result = prime * result + ((getSumwitamount() == null) ? 0 : getSumwitamount().hashCode());
-        result = prime * result + ((getSumagentprofit() == null) ? 0 : getSumagentprofit().hashCode());
-        result = prime * result + ((getSumordercount() == null) ? 0 : getSumordercount().hashCode());
-        result = prime * result + ((getTodaywitamount() == null) ? 0 : getTodaywitamount().hashCode());
-        result = prime * result + ((getTodaydealamount() == null) ? 0 : getTodaydealamount().hashCode());
-        result = prime * result + ((getTodayprofit() == null) ? 0 : getTodayprofit().hashCode());
-        result = prime * result + ((getTodayordercount() == null) ? 0 : getTodayordercount().hashCode());
-        result = prime * result + ((getTodayagentprofit() == null) ? 0 : getTodayagentprofit().hashCode());
-        result = prime * result + ((getUsertype() == null) ? 0 : getUsertype().hashCode());
+        result = prime * result + ((getUserId() == null) ? 0 : getUserId().hashCode());
+        result = prime * result + ((getUserName() == null) ? 0 : getUserName().hashCode());
+        result = prime * result + ((getCashBalance() == null) ? 0 : getCashBalance().hashCode());
+        result = prime * result + ((getRechargeNumber() == null) ? 0 : getRechargeNumber().hashCode());
+        result = prime * result + ((getFreezeBalance() == null) ? 0 : getFreezeBalance().hashCode());
+        result = prime * result + ((getAccountBalance() == null) ? 0 : getAccountBalance().hashCode());
+        result = prime * result + ((getSumDealAmount() == null) ? 0 : getSumDealAmount().hashCode());
+        result = prime * result + ((getSumRechargeAmount() == null) ? 0 : getSumRechargeAmount().hashCode());
+        result = prime * result + ((getSumProfit() == null) ? 0 : getSumProfit().hashCode());
+        result = prime * result + ((getSumWitAmount() == null) ? 0 : getSumWitAmount().hashCode());
+        result = prime * result + ((getSumAgentProfit() == null) ? 0 : getSumAgentProfit().hashCode());
+        result = prime * result + ((getSumOrderCount() == null) ? 0 : getSumOrderCount().hashCode());
+        result = prime * result + ((getTodayWitAmount() == null) ? 0 : getTodayWitAmount().hashCode());
+        result = prime * result + ((getTodayDealAmount() == null) ? 0 : getTodayDealAmount().hashCode());
+        result = prime * result + ((getTodayProfit() == null) ? 0 : getTodayProfit().hashCode());
+        result = prime * result + ((getTodayOrderCount() == null) ? 0 : getTodayOrderCount().hashCode());
+        result = prime * result + ((getTodayAgentProfit() == null) ? 0 : getTodayAgentProfit().hashCode());
+        result = prime * result + ((getUserType() == null) ? 0 : getUserType().hashCode());
         result = prime * result + ((getAgent() == null) ? 0 : getAgent().hashCode());
-        result = prime * result + ((getIsagent() == null) ? 0 : getIsagent().hashCode());
-        result = prime * result + ((getCreatetime() == null) ? 0 : getCreatetime().hashCode());
-        result = prime * result + ((getSubmittime() == null) ? 0 : getSubmittime().hashCode());
+        result = prime * result + ((getIsAgent() == null) ? 0 : getIsAgent().hashCode());
+        result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
+        result = prime * result + ((getSubmitTime() == null) ? 0 : getSubmitTime().hashCode());
         result = prime * result + ((getStatus() == null) ? 0 : getStatus().hashCode());
         result = prime * result + ((getVersion() == null) ? 0 : getVersion().hashCode());
         result = prime * result + ((getCurrency() == null) ? 0 : getCurrency().hashCode());
         result = prime * result + ((getQuota() == null) ? 0 : getQuota().hashCode());
-        result = prime * result + ((getSumotherwitamount() == null) ? 0 : getSumotherwitamount().hashCode());
-        result = prime * result + ((getTodayotherwitamount() == null) ? 0 : getTodayotherwitamount().hashCode());
+        result = prime * result + ((getSumOtherWitAmount() == null) ? 0 : getSumOtherWitAmount().hashCode());
+        result = prime * result + ((getTodayOtherWitAmount() == null) ? 0 : getTodayOtherWitAmount().hashCode());
         result = prime * result + ((getDeposit() == null) ? 0 : getDeposit().hashCode());
         return result;
     }
@@ -677,34 +705,34 @@ public class UserFund implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", userid=").append(userid);
-        sb.append(", username=").append(username);
-        sb.append(", cashbalance=").append(cashbalance);
-        sb.append(", rechargenumber=").append(rechargenumber);
-        sb.append(", freezebalance=").append(freezebalance);
-        sb.append(", accountbalance=").append(accountbalance);
-        sb.append(", sumdealamount=").append(sumdealamount);
-        sb.append(", sumrechargeamount=").append(sumrechargeamount);
-        sb.append(", sumprofit=").append(sumprofit);
-        sb.append(", sumwitamount=").append(sumwitamount);
-        sb.append(", sumagentprofit=").append(sumagentprofit);
-        sb.append(", sumordercount=").append(sumordercount);
-        sb.append(", todaywitamount=").append(todaywitamount);
-        sb.append(", todaydealamount=").append(todaydealamount);
-        sb.append(", todayprofit=").append(todayprofit);
-        sb.append(", todayordercount=").append(todayordercount);
-        sb.append(", todayagentprofit=").append(todayagentprofit);
-        sb.append(", usertype=").append(usertype);
+        sb.append(", userId=").append(userId);
+        sb.append(", userName=").append(userName);
+        sb.append(", cashBalance=").append(cashBalance);
+        sb.append(", rechargeNumber=").append(rechargeNumber);
+        sb.append(", freezeBalance=").append(freezeBalance);
+        sb.append(", accountBalance=").append(accountBalance);
+        sb.append(", sumDealAmount=").append(sumDealAmount);
+        sb.append(", sumRechargeAmount=").append(sumRechargeAmount);
+        sb.append(", sumProfit=").append(sumProfit);
+        sb.append(", sumWitAmount=").append(sumWitAmount);
+        sb.append(", sumAgentProfit=").append(sumAgentProfit);
+        sb.append(", sumOrderCount=").append(sumOrderCount);
+        sb.append(", todayWitAmount=").append(todayWitAmount);
+        sb.append(", todayDealAmount=").append(todayDealAmount);
+        sb.append(", todayProfit=").append(todayProfit);
+        sb.append(", todayOrderCount=").append(todayOrderCount);
+        sb.append(", todayAgentProfit=").append(todayAgentProfit);
+        sb.append(", userType=").append(userType);
         sb.append(", agent=").append(agent);
-        sb.append(", isagent=").append(isagent);
-        sb.append(", createtime=").append(createtime);
-        sb.append(", submittime=").append(submittime);
+        sb.append(", isAgent=").append(isAgent);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", submitTime=").append(submitTime);
         sb.append(", status=").append(status);
         sb.append(", version=").append(version);
         sb.append(", currency=").append(currency);
         sb.append(", quota=").append(quota);
-        sb.append(", sumotherwitamount=").append(sumotherwitamount);
-        sb.append(", todayotherwitamount=").append(todayotherwitamount);
+        sb.append(", sumOtherWitAmount=").append(sumOtherWitAmount);
+        sb.append(", todayOtherWitAmount=").append(todayOtherWitAmount);
         sb.append(", deposit=").append(deposit);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

@@ -6,26 +6,26 @@
 
     <resultMap id="BaseResultMap" type="com.admin.out.api.newadminoutapi.dao.domain.DealOrderApp">
             <id property="id" column="id" jdbcType="INTEGER"/>
-            <result property="orderid" column="orderId" jdbcType="VARCHAR"/>
-            <result property="ordertype" column="orderType" jdbcType="INTEGER"/>
-            <result property="orderaccount" column="orderAccount" jdbcType="VARCHAR"/>
-            <result property="orderstatus" column="orderStatus" jdbcType="CHAR"/>
-            <result property="dealdescribe" column="dealDescribe" jdbcType="VARCHAR"/>
-            <result property="orderamount" column="orderAmount" jdbcType="DECIMAL"/>
-            <result property="orderip" column="orderIp" jdbcType="VARCHAR"/>
-            <result property="apporderid" column="appOrderId" jdbcType="VARCHAR"/>
-            <result property="feeid" column="feeId" jdbcType="INTEGER"/>
+            <result property="orderId" column="orderId" jdbcType="VARCHAR"/>
+            <result property="orderType" column="orderType" jdbcType="INTEGER"/>
+            <result property="orderAccount" column="orderAccount" jdbcType="VARCHAR"/>
+            <result property="orderStatus" column="orderStatus" jdbcType="CHAR"/>
+            <result property="dealDescribe" column="dealDescribe" jdbcType="VARCHAR"/>
+            <result property="orderAmount" column="orderAmount" jdbcType="DECIMAL"/>
+            <result property="orderIp" column="orderIp" jdbcType="VARCHAR"/>
+            <result property="appOrderId" column="appOrderId" jdbcType="VARCHAR"/>
+            <result property="feeId" column="feeId" jdbcType="INTEGER"/>
             <result property="notify" column="notify" jdbcType="VARCHAR"/>
             <result property="back" column="back" jdbcType="VARCHAR"/>
-            <result property="submittime" column="submitTime" jdbcType="TIMESTAMP"/>
-            <result property="createtime" column="createTime" jdbcType="TIMESTAMP"/>
+            <result property="submitTime" column="submitTime" jdbcType="TIMESTAMP"/>
+            <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
             <result property="status" column="status" jdbcType="INTEGER"/>
             <result property="retain1" column="retain1" jdbcType="CHAR"/>
             <result property="retain2" column="retain2" jdbcType="CHAR"/>
             <result property="retain3" column="retain3" jdbcType="DECIMAL"/>
             <result property="currency" column="currency" jdbcType="VARCHAR"/>
             <result property="txhash" column="txhash" jdbcType="VARCHAR"/>
-            <result property="actualamount" column="actualAmount" jdbcType="DECIMAL"/>
+            <result property="actualAmount" column="actualAmount" jdbcType="DECIMAL"/>
             <result property="request" column="request" jdbcType="VARCHAR"/>
             <result property="response" column="response" jdbcType="VARCHAR"/>
     </resultMap>

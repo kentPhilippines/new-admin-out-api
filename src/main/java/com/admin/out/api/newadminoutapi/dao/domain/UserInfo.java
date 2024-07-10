@@ -17,188 +17,229 @@ public class UserInfo implements Serializable {
     /**
      * 数据id
      */
-    @TableId(type = IdType.AUTO)
+    @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
     /**
      * 用户id【登录账号】
      */
-    private String userid;
+    @TableField(value = "userId")
+    private String userId;
 
     /**
      * 用户昵称
      */
-    private String username;
+    @TableField(value = "userName")
+    private String userName;
 
     /**
      * shiro加密秘钥【登录】
      */
+    @TableField(value = "password")
     private String password;
 
     /**
      * shiro加密秘钥【资金】【商户则为交易秘钥】
      */
-    private String paypasword;
+    @TableField(value = "payPasword")
+    private String payPasword;
 
     /**
      * 秘钥加密盐值【加密算法】
      */
+    @TableField(value = "salt")
     private String salt;
 
     /**
      * 用户类型,商户1 码商2
      */
-    private Integer usertype;
+    @TableField(value = "userType")
+    private Integer userType;
 
     /**
      * 当前用户总开关 1开启0关闭【码商商户后台控制,该值只能在后台显示】
      */
+    @TableField(value = "switchs")
     private Integer switchs;
 
     /**
      * 组群备注,如果为渠道账户则为渠道商户号
      */
-    private String usernode;
+    @TableField(value = "userNode")
+    private String userNode;
 
     /**
      * 邮箱【修改账号秘钥邮件发送地址】
      */
+    @TableField(value = "email")
     private String email;
 
     /**
      * 代理商id【如果存在代理商则存在数据,如果不存在代理商则为null】
      */
+    @TableField(value = "agent")
     private String agent;
 
     /**
      * 是否为代理商:1代理商2普通码商【分润结算类型看用户类型userType】
      */
-    private String isagent;
+    @TableField(value = "isAgent")
+    private String isAgent;
 
     /**
      * 信用等级为默认为100,掉单一次,或者出现故障一次减分0.001分,可人为加分
      */
+    @TableField(value = "credit")
     private BigDecimal credit;
 
     /**
      * 是否处于入款接单状态 1 接单 2 暂停接单【下游商户则为是否可以交易】
      */
-    private Integer receiveorderstate;
+    @TableField(value = "receiveOrderState")
+    private Integer receiveOrderState;
 
     /**
      * 是否处于入款接单状态 1 接单 2 暂停接单【下游商户则为是否可以代付】
      */
-    private Integer remitorderstate;
+    @TableField(value = "remitOrderState")
+    private Integer remitOrderState;
 
     /**
      * QQ联系方式
      */
-    private String qq;
+    @TableField(value = "QQ")
+    private String QQ;
 
     /**
      * 小飞机
      */
+    @TableField(value = "telegram")
     private String telegram;
 
     /**
      * skype
      */
+    @TableField(value = "skype")
     private String skype;
 
     /**
      * 数据创建时间
      */
-    private Date createtime;
+    @TableField(value = "createTime")
+    private Date createTime;
 
     /**
      * 最后一次数据修改时间
      */
-    private Date submittime;
+    @TableField(value = "submitTime")
+    private Date submitTime;
 
     /**
      * 数据是否可用:1数据可用2数据无用
      */
+    @TableField(value = "status")
     private Integer status;
 
     /**
      * 商户私钥
      */
-    private String privatekey;
+    @TableField(value = "privateKey")
+    private String privateKey;
 
     /**
      * 商户公钥
      */
-    private String publickey;
+    @TableField(value = "publicKey")
+    private String publicKey;
 
     /**
      * 最小金额
      */
-    private BigDecimal minamount;
+    @TableField(value = "minAmount")
+    private BigDecimal minAmount;
 
     /**
      * 最大金额
      */
-    private BigDecimal maxamount;
+    @TableField(value = "maxAmount")
+    private BigDecimal maxAmount;
 
     /**
      * 总金额限制
      */
-    private BigDecimal totalamount;
+    @TableField(value = "totalAmount")
+    private BigDecimal totalAmount;
 
     /**
      * 下单次数
      */
-    private Integer timestotal;
+    @TableField(value = "timesTotal")
+    private Integer timesTotal;
 
     /**
      * 限制时间-开始时间
      */
-    private String starttime;
+    @TableField(value = "startTime")
+    private String startTime;
 
     /**
      * 限制时间-结束时间
      */
-    private String endtime;
+    @TableField(value = "endTime")
+    private String endTime;
 
     /**
      * 代付ip
      */
+    @TableField(value = "witip")
     private String witip;
 
     /**
      * 供应队列code
      */
-    private String queuelist;
+    @TableField(value = "queueList")
+    private String queueList;
 
     /**
      * 交易IP设置【码商不填次地址无法交易】
      */
-    private String dealurl;
+    @TableField(value = "dealUrl")
+    private String dealUrl;
 
     /**
      * 码商充值,商户充值，卡商供应标识
      */
-    private String qrrechargelist;
+    @TableField(value = "qrRechargeList")
+    private String qrRechargeList;
 
     /**
      * 0:手动代付;1:自动代付
      */
-    private Integer autowit;
+    @TableField(value = "autoWit")
+    private Integer autoWit;
 
     /**
      * 是否开通反查接口 1  开通  0 不开通
      */
-    private Integer enterwitopen;
+    @TableField(value = "enterWitOpen")
+    private Integer enterWitOpen;
 
+    /**
+     * 商户回调接口
+     */
+    @TableField(value = "interFace")
+    private String interFace;
 
     /**
      * 
      */
-    private String balanceurl;
+    @TableField(value = "balanceUrl")
+    private String balanceUrl;
 
     /**
      * 自动出款 0 关闭 1 开启
      */
+    @TableField(value = "autowitstatus")
     private Integer autowitstatus;
 
     @TableField(exist = false)
@@ -221,29 +262,29 @@ public class UserInfo implements Serializable {
     /**
      * 用户id【登录账号】
      */
-    public String getUserid() {
-        return userid;
+    public String getUserId() {
+        return userId;
     }
 
     /**
      * 用户id【登录账号】
      */
-    public void setUserid(String userid) {
-        this.userid = userid;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     /**
      * 用户昵称
      */
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
     /**
      * 用户昵称
      */
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     /**
@@ -263,15 +304,15 @@ public class UserInfo implements Serializable {
     /**
      * shiro加密秘钥【资金】【商户则为交易秘钥】
      */
-    public String getPaypasword() {
-        return paypasword;
+    public String getPayPasword() {
+        return payPasword;
     }
 
     /**
      * shiro加密秘钥【资金】【商户则为交易秘钥】
      */
-    public void setPaypasword(String paypasword) {
-        this.paypasword = paypasword;
+    public void setPayPasword(String payPasword) {
+        this.payPasword = payPasword;
     }
 
     /**
@@ -291,15 +332,15 @@ public class UserInfo implements Serializable {
     /**
      * 用户类型,商户1 码商2
      */
-    public Integer getUsertype() {
-        return usertype;
+    public Integer getUserType() {
+        return userType;
     }
 
     /**
      * 用户类型,商户1 码商2
      */
-    public void setUsertype(Integer usertype) {
-        this.usertype = usertype;
+    public void setUserType(Integer userType) {
+        this.userType = userType;
     }
 
     /**
@@ -319,15 +360,15 @@ public class UserInfo implements Serializable {
     /**
      * 组群备注,如果为渠道账户则为渠道商户号
      */
-    public String getUsernode() {
-        return usernode;
+    public String getUserNode() {
+        return userNode;
     }
 
     /**
      * 组群备注,如果为渠道账户则为渠道商户号
      */
-    public void setUsernode(String usernode) {
-        this.usernode = usernode;
+    public void setUserNode(String userNode) {
+        this.userNode = userNode;
     }
 
     /**
@@ -361,15 +402,15 @@ public class UserInfo implements Serializable {
     /**
      * 是否为代理商:1代理商2普通码商【分润结算类型看用户类型userType】
      */
-    public String getIsagent() {
-        return isagent;
+    public String getIsAgent() {
+        return isAgent;
     }
 
     /**
      * 是否为代理商:1代理商2普通码商【分润结算类型看用户类型userType】
      */
-    public void setIsagent(String isagent) {
-        this.isagent = isagent;
+    public void setIsAgent(String isAgent) {
+        this.isAgent = isAgent;
     }
 
     /**
@@ -389,43 +430,43 @@ public class UserInfo implements Serializable {
     /**
      * 是否处于入款接单状态 1 接单 2 暂停接单【下游商户则为是否可以交易】
      */
-    public Integer getReceiveorderstate() {
-        return receiveorderstate;
+    public Integer getReceiveOrderState() {
+        return receiveOrderState;
     }
 
     /**
      * 是否处于入款接单状态 1 接单 2 暂停接单【下游商户则为是否可以交易】
      */
-    public void setReceiveorderstate(Integer receiveorderstate) {
-        this.receiveorderstate = receiveorderstate;
+    public void setReceiveOrderState(Integer receiveOrderState) {
+        this.receiveOrderState = receiveOrderState;
     }
 
     /**
      * 是否处于入款接单状态 1 接单 2 暂停接单【下游商户则为是否可以代付】
      */
-    public Integer getRemitorderstate() {
-        return remitorderstate;
+    public Integer getRemitOrderState() {
+        return remitOrderState;
     }
 
     /**
      * 是否处于入款接单状态 1 接单 2 暂停接单【下游商户则为是否可以代付】
      */
-    public void setRemitorderstate(Integer remitorderstate) {
-        this.remitorderstate = remitorderstate;
+    public void setRemitOrderState(Integer remitOrderState) {
+        this.remitOrderState = remitOrderState;
     }
 
     /**
      * QQ联系方式
      */
-    public String getQq() {
-        return qq;
+    public String getQQ() {
+        return QQ;
     }
 
     /**
      * QQ联系方式
      */
-    public void setQq(String qq) {
-        this.qq = qq;
+    public void setQQ(String QQ) {
+        this.QQ = QQ;
     }
 
     /**
@@ -459,29 +500,29 @@ public class UserInfo implements Serializable {
     /**
      * 数据创建时间
      */
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
     /**
      * 数据创建时间
      */
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     /**
      * 最后一次数据修改时间
      */
-    public Date getSubmittime() {
-        return submittime;
+    public Date getSubmitTime() {
+        return submitTime;
     }
 
     /**
      * 最后一次数据修改时间
      */
-    public void setSubmittime(Date submittime) {
-        this.submittime = submittime;
+    public void setSubmitTime(Date submitTime) {
+        this.submitTime = submitTime;
     }
 
     /**
@@ -501,113 +542,113 @@ public class UserInfo implements Serializable {
     /**
      * 商户私钥
      */
-    public String getPrivatekey() {
-        return privatekey;
+    public String getPrivateKey() {
+        return privateKey;
     }
 
     /**
      * 商户私钥
      */
-    public void setPrivatekey(String privatekey) {
-        this.privatekey = privatekey;
+    public void setPrivateKey(String privateKey) {
+        this.privateKey = privateKey;
     }
 
     /**
      * 商户公钥
      */
-    public String getPublickey() {
-        return publickey;
+    public String getPublicKey() {
+        return publicKey;
     }
 
     /**
      * 商户公钥
      */
-    public void setPublickey(String publickey) {
-        this.publickey = publickey;
+    public void setPublicKey(String publicKey) {
+        this.publicKey = publicKey;
     }
 
     /**
      * 最小金额
      */
-    public BigDecimal getMinamount() {
-        return minamount;
+    public BigDecimal getMinAmount() {
+        return minAmount;
     }
 
     /**
      * 最小金额
      */
-    public void setMinamount(BigDecimal minamount) {
-        this.minamount = minamount;
+    public void setMinAmount(BigDecimal minAmount) {
+        this.minAmount = minAmount;
     }
 
     /**
      * 最大金额
      */
-    public BigDecimal getMaxamount() {
-        return maxamount;
+    public BigDecimal getMaxAmount() {
+        return maxAmount;
     }
 
     /**
      * 最大金额
      */
-    public void setMaxamount(BigDecimal maxamount) {
-        this.maxamount = maxamount;
+    public void setMaxAmount(BigDecimal maxAmount) {
+        this.maxAmount = maxAmount;
     }
 
     /**
      * 总金额限制
      */
-    public BigDecimal getTotalamount() {
-        return totalamount;
+    public BigDecimal getTotalAmount() {
+        return totalAmount;
     }
 
     /**
      * 总金额限制
      */
-    public void setTotalamount(BigDecimal totalamount) {
-        this.totalamount = totalamount;
+    public void setTotalAmount(BigDecimal totalAmount) {
+        this.totalAmount = totalAmount;
     }
 
     /**
      * 下单次数
      */
-    public Integer getTimestotal() {
-        return timestotal;
+    public Integer getTimesTotal() {
+        return timesTotal;
     }
 
     /**
      * 下单次数
      */
-    public void setTimestotal(Integer timestotal) {
-        this.timestotal = timestotal;
+    public void setTimesTotal(Integer timesTotal) {
+        this.timesTotal = timesTotal;
     }
 
     /**
      * 限制时间-开始时间
      */
-    public String getStarttime() {
-        return starttime;
+    public String getStartTime() {
+        return startTime;
     }
 
     /**
      * 限制时间-开始时间
      */
-    public void setStarttime(String starttime) {
-        this.starttime = starttime;
+    public void setStartTime(String startTime) {
+        this.startTime = startTime;
     }
 
     /**
      * 限制时间-结束时间
      */
-    public String getEndtime() {
-        return endtime;
+    public String getEndTime() {
+        return endTime;
     }
 
     /**
      * 限制时间-结束时间
      */
-    public void setEndtime(String endtime) {
-        this.endtime = endtime;
+    public void setEndTime(String endTime) {
+        this.endTime = endTime;
     }
 
     /**
@@ -627,88 +668,99 @@ public class UserInfo implements Serializable {
     /**
      * 供应队列code
      */
-    public String getQueuelist() {
-        return queuelist;
+    public String getQueueList() {
+        return queueList;
     }
 
     /**
      * 供应队列code
      */
-    public void setQueuelist(String queuelist) {
-        this.queuelist = queuelist;
+    public void setQueueList(String queueList) {
+        this.queueList = queueList;
     }
 
     /**
      * 交易IP设置【码商不填次地址无法交易】
      */
-    public String getDealurl() {
-        return dealurl;
+    public String getDealUrl() {
+        return dealUrl;
     }
 
     /**
      * 交易IP设置【码商不填次地址无法交易】
      */
-    public void setDealurl(String dealurl) {
-        this.dealurl = dealurl;
+    public void setDealUrl(String dealUrl) {
+        this.dealUrl = dealUrl;
     }
 
     /**
      * 码商充值,商户充值，卡商供应标识
      */
-    public String getQrrechargelist() {
-        return qrrechargelist;
+    public String getQrRechargeList() {
+        return qrRechargeList;
     }
 
     /**
      * 码商充值,商户充值，卡商供应标识
      */
-    public void setQrrechargelist(String qrrechargelist) {
-        this.qrrechargelist = qrrechargelist;
+    public void setQrRechargeList(String qrRechargeList) {
+        this.qrRechargeList = qrRechargeList;
     }
 
     /**
      * 0:手动代付;1:自动代付
      */
-    public Integer getAutowit() {
-        return autowit;
+    public Integer getAutoWit() {
+        return autoWit;
     }
 
     /**
      * 0:手动代付;1:自动代付
      */
-    public void setAutowit(Integer autowit) {
-        this.autowit = autowit;
+    public void setAutoWit(Integer autoWit) {
+        this.autoWit = autoWit;
     }
 
     /**
      * 是否开通反查接口 1  开通  0 不开通
      */
-    public Integer getEnterwitopen() {
-        return enterwitopen;
+    public Integer getEnterWitOpen() {
+        return enterWitOpen;
     }
 
     /**
      * 是否开通反查接口 1  开通  0 不开通
      */
-    public void setEnterwitopen(Integer enterwitopen) {
-        this.enterwitopen = enterwitopen;
+    public void setEnterWitOpen(Integer enterWitOpen) {
+        this.enterWitOpen = enterWitOpen;
     }
 
+    /**
+     * 商户回调接口
+     */
+    public String getInterFace() {
+        return interFace;
+    }
 
-
+    /**
+     * 商户回调接口
+     */
+    public void setInterFace(String interFace) {
+        this.interFace = interFace;
+    }
 
     /**
      * 
      */
-    public String getBalanceurl() {
-        return balanceurl;
+    public String getBalanceUrl() {
+        return balanceUrl;
     }
 
     /**
      * 
      */
-    public void setBalanceurl(String balanceurl) {
-        this.balanceurl = balanceurl;
+    public void setBalanceUrl(String balanceUrl) {
+        this.balanceUrl = balanceUrl;
     }
 
     /**
@@ -738,41 +790,42 @@ public class UserInfo implements Serializable {
         }
         UserInfo other = (UserInfo) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getUserid() == null ? other.getUserid() == null : this.getUserid().equals(other.getUserid()))
-            && (this.getUsername() == null ? other.getUsername() == null : this.getUsername().equals(other.getUsername()))
+            && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
+            && (this.getUserName() == null ? other.getUserName() == null : this.getUserName().equals(other.getUserName()))
             && (this.getPassword() == null ? other.getPassword() == null : this.getPassword().equals(other.getPassword()))
-            && (this.getPaypasword() == null ? other.getPaypasword() == null : this.getPaypasword().equals(other.getPaypasword()))
+            && (this.getPayPasword() == null ? other.getPayPasword() == null : this.getPayPasword().equals(other.getPayPasword()))
             && (this.getSalt() == null ? other.getSalt() == null : this.getSalt().equals(other.getSalt()))
-            && (this.getUsertype() == null ? other.getUsertype() == null : this.getUsertype().equals(other.getUsertype()))
+            && (this.getUserType() == null ? other.getUserType() == null : this.getUserType().equals(other.getUserType()))
             && (this.getSwitchs() == null ? other.getSwitchs() == null : this.getSwitchs().equals(other.getSwitchs()))
-            && (this.getUsernode() == null ? other.getUsernode() == null : this.getUsernode().equals(other.getUsernode()))
+            && (this.getUserNode() == null ? other.getUserNode() == null : this.getUserNode().equals(other.getUserNode()))
             && (this.getEmail() == null ? other.getEmail() == null : this.getEmail().equals(other.getEmail()))
             && (this.getAgent() == null ? other.getAgent() == null : this.getAgent().equals(other.getAgent()))
-            && (this.getIsagent() == null ? other.getIsagent() == null : this.getIsagent().equals(other.getIsagent()))
+            && (this.getIsAgent() == null ? other.getIsAgent() == null : this.getIsAgent().equals(other.getIsAgent()))
             && (this.getCredit() == null ? other.getCredit() == null : this.getCredit().equals(other.getCredit()))
-            && (this.getReceiveorderstate() == null ? other.getReceiveorderstate() == null : this.getReceiveorderstate().equals(other.getReceiveorderstate()))
-            && (this.getRemitorderstate() == null ? other.getRemitorderstate() == null : this.getRemitorderstate().equals(other.getRemitorderstate()))
-            && (this.getQq() == null ? other.getQq() == null : this.getQq().equals(other.getQq()))
+            && (this.getReceiveOrderState() == null ? other.getReceiveOrderState() == null : this.getReceiveOrderState().equals(other.getReceiveOrderState()))
+            && (this.getRemitOrderState() == null ? other.getRemitOrderState() == null : this.getRemitOrderState().equals(other.getRemitOrderState()))
+            && (this.getQQ() == null ? other.getQQ() == null : this.getQQ().equals(other.getQQ()))
             && (this.getTelegram() == null ? other.getTelegram() == null : this.getTelegram().equals(other.getTelegram()))
             && (this.getSkype() == null ? other.getSkype() == null : this.getSkype().equals(other.getSkype()))
-            && (this.getCreatetime() == null ? other.getCreatetime() == null : this.getCreatetime().equals(other.getCreatetime()))
-            && (this.getSubmittime() == null ? other.getSubmittime() == null : this.getSubmittime().equals(other.getSubmittime()))
+            && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
+            && (this.getSubmitTime() == null ? other.getSubmitTime() == null : this.getSubmitTime().equals(other.getSubmitTime()))
             && (this.getStatus() == null ? other.getStatus() == null : this.getStatus().equals(other.getStatus()))
-            && (this.getPrivatekey() == null ? other.getPrivatekey() == null : this.getPrivatekey().equals(other.getPrivatekey()))
-            && (this.getPublickey() == null ? other.getPublickey() == null : this.getPublickey().equals(other.getPublickey()))
-            && (this.getMinamount() == null ? other.getMinamount() == null : this.getMinamount().equals(other.getMinamount()))
-            && (this.getMaxamount() == null ? other.getMaxamount() == null : this.getMaxamount().equals(other.getMaxamount()))
-            && (this.getTotalamount() == null ? other.getTotalamount() == null : this.getTotalamount().equals(other.getTotalamount()))
-            && (this.getTimestotal() == null ? other.getTimestotal() == null : this.getTimestotal().equals(other.getTimestotal()))
-            && (this.getStarttime() == null ? other.getStarttime() == null : this.getStarttime().equals(other.getStarttime()))
-            && (this.getEndtime() == null ? other.getEndtime() == null : this.getEndtime().equals(other.getEndtime()))
+            && (this.getPrivateKey() == null ? other.getPrivateKey() == null : this.getPrivateKey().equals(other.getPrivateKey()))
+            && (this.getPublicKey() == null ? other.getPublicKey() == null : this.getPublicKey().equals(other.getPublicKey()))
+            && (this.getMinAmount() == null ? other.getMinAmount() == null : this.getMinAmount().equals(other.getMinAmount()))
+            && (this.getMaxAmount() == null ? other.getMaxAmount() == null : this.getMaxAmount().equals(other.getMaxAmount()))
+            && (this.getTotalAmount() == null ? other.getTotalAmount() == null : this.getTotalAmount().equals(other.getTotalAmount()))
+            && (this.getTimesTotal() == null ? other.getTimesTotal() == null : this.getTimesTotal().equals(other.getTimesTotal()))
+            && (this.getStartTime() == null ? other.getStartTime() == null : this.getStartTime().equals(other.getStartTime()))
+            && (this.getEndTime() == null ? other.getEndTime() == null : this.getEndTime().equals(other.getEndTime()))
             && (this.getWitip() == null ? other.getWitip() == null : this.getWitip().equals(other.getWitip()))
-            && (this.getQueuelist() == null ? other.getQueuelist() == null : this.getQueuelist().equals(other.getQueuelist()))
-            && (this.getDealurl() == null ? other.getDealurl() == null : this.getDealurl().equals(other.getDealurl()))
-            && (this.getQrrechargelist() == null ? other.getQrrechargelist() == null : this.getQrrechargelist().equals(other.getQrrechargelist()))
-            && (this.getAutowit() == null ? other.getAutowit() == null : this.getAutowit().equals(other.getAutowit()))
-            && (this.getEnterwitopen() == null ? other.getEnterwitopen() == null : this.getEnterwitopen().equals(other.getEnterwitopen()))
-            && (this.getBalanceurl() == null ? other.getBalanceurl() == null : this.getBalanceurl().equals(other.getBalanceurl()))
+            && (this.getQueueList() == null ? other.getQueueList() == null : this.getQueueList().equals(other.getQueueList()))
+            && (this.getDealUrl() == null ? other.getDealUrl() == null : this.getDealUrl().equals(other.getDealUrl()))
+            && (this.getQrRechargeList() == null ? other.getQrRechargeList() == null : this.getQrRechargeList().equals(other.getQrRechargeList()))
+            && (this.getAutoWit() == null ? other.getAutoWit() == null : this.getAutoWit().equals(other.getAutoWit()))
+            && (this.getEnterWitOpen() == null ? other.getEnterWitOpen() == null : this.getEnterWitOpen().equals(other.getEnterWitOpen()))
+            && (this.getInterFace() == null ? other.getInterFace() == null : this.getInterFace().equals(other.getInterFace()))
+            && (this.getBalanceUrl() == null ? other.getBalanceUrl() == null : this.getBalanceUrl().equals(other.getBalanceUrl()))
             && (this.getAutowitstatus() == null ? other.getAutowitstatus() == null : this.getAutowitstatus().equals(other.getAutowitstatus()));
     }
 
@@ -781,41 +834,42 @@ public class UserInfo implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
-        result = prime * result + ((getUserid() == null) ? 0 : getUserid().hashCode());
-        result = prime * result + ((getUsername() == null) ? 0 : getUsername().hashCode());
+        result = prime * result + ((getUserId() == null) ? 0 : getUserId().hashCode());
+        result = prime * result + ((getUserName() == null) ? 0 : getUserName().hashCode());
         result = prime * result + ((getPassword() == null) ? 0 : getPassword().hashCode());
-        result = prime * result + ((getPaypasword() == null) ? 0 : getPaypasword().hashCode());
+        result = prime * result + ((getPayPasword() == null) ? 0 : getPayPasword().hashCode());
         result = prime * result + ((getSalt() == null) ? 0 : getSalt().hashCode());
-        result = prime * result + ((getUsertype() == null) ? 0 : getUsertype().hashCode());
+        result = prime * result + ((getUserType() == null) ? 0 : getUserType().hashCode());
         result = prime * result + ((getSwitchs() == null) ? 0 : getSwitchs().hashCode());
-        result = prime * result + ((getUsernode() == null) ? 0 : getUsernode().hashCode());
+        result = prime * result + ((getUserNode() == null) ? 0 : getUserNode().hashCode());
         result = prime * result + ((getEmail() == null) ? 0 : getEmail().hashCode());
         result = prime * result + ((getAgent() == null) ? 0 : getAgent().hashCode());
-        result = prime * result + ((getIsagent() == null) ? 0 : getIsagent().hashCode());
+        result = prime * result + ((getIsAgent() == null) ? 0 : getIsAgent().hashCode());
         result = prime * result + ((getCredit() == null) ? 0 : getCredit().hashCode());
-        result = prime * result + ((getReceiveorderstate() == null) ? 0 : getReceiveorderstate().hashCode());
-        result = prime * result + ((getRemitorderstate() == null) ? 0 : getRemitorderstate().hashCode());
-        result = prime * result + ((getQq() == null) ? 0 : getQq().hashCode());
+        result = prime * result + ((getReceiveOrderState() == null) ? 0 : getReceiveOrderState().hashCode());
+        result = prime * result + ((getRemitOrderState() == null) ? 0 : getRemitOrderState().hashCode());
+        result = prime * result + ((getQQ() == null) ? 0 : getQQ().hashCode());
         result = prime * result + ((getTelegram() == null) ? 0 : getTelegram().hashCode());
         result = prime * result + ((getSkype() == null) ? 0 : getSkype().hashCode());
-        result = prime * result + ((getCreatetime() == null) ? 0 : getCreatetime().hashCode());
-        result = prime * result + ((getSubmittime() == null) ? 0 : getSubmittime().hashCode());
+        result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
+        result = prime * result + ((getSubmitTime() == null) ? 0 : getSubmitTime().hashCode());
         result = prime * result + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        result = prime * result + ((getPrivatekey() == null) ? 0 : getPrivatekey().hashCode());
-        result = prime * result + ((getPublickey() == null) ? 0 : getPublickey().hashCode());
-        result = prime * result + ((getMinamount() == null) ? 0 : getMinamount().hashCode());
-        result = prime * result + ((getMaxamount() == null) ? 0 : getMaxamount().hashCode());
-        result = prime * result + ((getTotalamount() == null) ? 0 : getTotalamount().hashCode());
-        result = prime * result + ((getTimestotal() == null) ? 0 : getTimestotal().hashCode());
-        result = prime * result + ((getStarttime() == null) ? 0 : getStarttime().hashCode());
-        result = prime * result + ((getEndtime() == null) ? 0 : getEndtime().hashCode());
+        result = prime * result + ((getPrivateKey() == null) ? 0 : getPrivateKey().hashCode());
+        result = prime * result + ((getPublicKey() == null) ? 0 : getPublicKey().hashCode());
+        result = prime * result + ((getMinAmount() == null) ? 0 : getMinAmount().hashCode());
+        result = prime * result + ((getMaxAmount() == null) ? 0 : getMaxAmount().hashCode());
+        result = prime * result + ((getTotalAmount() == null) ? 0 : getTotalAmount().hashCode());
+        result = prime * result + ((getTimesTotal() == null) ? 0 : getTimesTotal().hashCode());
+        result = prime * result + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
+        result = prime * result + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         result = prime * result + ((getWitip() == null) ? 0 : getWitip().hashCode());
-        result = prime * result + ((getQueuelist() == null) ? 0 : getQueuelist().hashCode());
-        result = prime * result + ((getDealurl() == null) ? 0 : getDealurl().hashCode());
-        result = prime * result + ((getQrrechargelist() == null) ? 0 : getQrrechargelist().hashCode());
-        result = prime * result + ((getAutowit() == null) ? 0 : getAutowit().hashCode());
-        result = prime * result + ((getEnterwitopen() == null) ? 0 : getEnterwitopen().hashCode());
-        result = prime * result + ((getBalanceurl() == null) ? 0 : getBalanceurl().hashCode());
+        result = prime * result + ((getQueueList() == null) ? 0 : getQueueList().hashCode());
+        result = prime * result + ((getDealUrl() == null) ? 0 : getDealUrl().hashCode());
+        result = prime * result + ((getQrRechargeList() == null) ? 0 : getQrRechargeList().hashCode());
+        result = prime * result + ((getAutoWit() == null) ? 0 : getAutoWit().hashCode());
+        result = prime * result + ((getEnterWitOpen() == null) ? 0 : getEnterWitOpen().hashCode());
+        result = prime * result + ((getInterFace() == null) ? 0 : getInterFace().hashCode());
+        result = prime * result + ((getBalanceUrl() == null) ? 0 : getBalanceUrl().hashCode());
         result = prime * result + ((getAutowitstatus() == null) ? 0 : getAutowitstatus().hashCode());
         return result;
     }
@@ -827,41 +881,42 @@ public class UserInfo implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", userid=").append(userid);
-        sb.append(", username=").append(username);
+        sb.append(", userId=").append(userId);
+        sb.append(", userName=").append(userName);
         sb.append(", password=").append(password);
-        sb.append(", paypasword=").append(paypasword);
+        sb.append(", payPasword=").append(payPasword);
         sb.append(", salt=").append(salt);
-        sb.append(", usertype=").append(usertype);
+        sb.append(", userType=").append(userType);
         sb.append(", switchs=").append(switchs);
-        sb.append(", usernode=").append(usernode);
+        sb.append(", userNode=").append(userNode);
         sb.append(", email=").append(email);
         sb.append(", agent=").append(agent);
-        sb.append(", isagent=").append(isagent);
+        sb.append(", isAgent=").append(isAgent);
         sb.append(", credit=").append(credit);
-        sb.append(", receiveorderstate=").append(receiveorderstate);
-        sb.append(", remitorderstate=").append(remitorderstate);
-        sb.append(", qq=").append(qq);
+        sb.append(", receiveOrderState=").append(receiveOrderState);
+        sb.append(", remitOrderState=").append(remitOrderState);
+        sb.append(", QQ=").append(QQ);
         sb.append(", telegram=").append(telegram);
         sb.append(", skype=").append(skype);
-        sb.append(", createtime=").append(createtime);
-        sb.append(", submittime=").append(submittime);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", submitTime=").append(submitTime);
         sb.append(", status=").append(status);
-        sb.append(", privatekey=").append(privatekey);
-        sb.append(", publickey=").append(publickey);
-        sb.append(", minamount=").append(minamount);
-        sb.append(", maxamount=").append(maxamount);
-        sb.append(", totalamount=").append(totalamount);
-        sb.append(", timestotal=").append(timestotal);
-        sb.append(", starttime=").append(starttime);
-        sb.append(", endtime=").append(endtime);
+        sb.append(", privateKey=").append(privateKey);
+        sb.append(", publicKey=").append(publicKey);
+        sb.append(", minAmount=").append(minAmount);
+        sb.append(", maxAmount=").append(maxAmount);
+        sb.append(", totalAmount=").append(totalAmount);
+        sb.append(", timesTotal=").append(timesTotal);
+        sb.append(", startTime=").append(startTime);
+        sb.append(", endTime=").append(endTime);
         sb.append(", witip=").append(witip);
-        sb.append(", queuelist=").append(queuelist);
-        sb.append(", dealurl=").append(dealurl);
-        sb.append(", qrrechargelist=").append(qrrechargelist);
-        sb.append(", autowit=").append(autowit);
-        sb.append(", enterwitopen=").append(enterwitopen);
-        sb.append(", balanceurl=").append(balanceurl);
+        sb.append(", queueList=").append(queueList);
+        sb.append(", dealUrl=").append(dealUrl);
+        sb.append(", qrRechargeList=").append(qrRechargeList);
+        sb.append(", autoWit=").append(autoWit);
+        sb.append(", enterWitOpen=").append(enterWitOpen);
+        sb.append(", interFace=").append(interFace);
+        sb.append(", balanceUrl=").append(balanceUrl);
         sb.append(", autowitstatus=").append(autowitstatus);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");

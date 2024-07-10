@@ -7,10 +7,9 @@ import org.apache.ibatis.annotations.Mapper;
 /**
 * @author 1
 * @description 针对表【alipay_user_info(用户详情表)】的数据库操作Mapper
-* @createDate 2024-07-11 01:40:25
+* @createDate 2024-07-11 03:41:00
 * @Entity com.admin.out.api.newadminoutapi.dao.domain.UserInfo
-*/
-@Mapper
+*/@Mapper
 public interface UserInfoMapper extends BaseMapper<UserInfo> {
 
 }

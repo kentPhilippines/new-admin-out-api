@@ -4,231 +4,267 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Data;
-
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.Map;
 
 /**
  * 会员提现记录表
  * @TableName alipay_withdraw
  */
 @TableName(value ="alipay_withdraw")
-@Data
 public class Withdraw implements Serializable {
-    private Map<String, Object> params;
     /**
      * 商户后台管理员
      */
-    @TableId(type = IdType.AUTO)
+    @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
     /**
      * 会员提现单号
      */
-    private String orderid;
+    @TableField(value = "orderId")
+    private String orderId;
 
     /**
      * 会员id(唯一识别号)(index索引)
      */
-    private String userid;
+    @TableField(value = "userId")
+    private String userId;
 
     /**
      * 商户提现1，码商提现2
      */
-    private String withdrawtype;
+    @TableField(value = "withdrawType")
+    private String withdrawType;
 
     /**
      * 银行卡号
      */
-    private String bankno;
+    @TableField(value = "bankNo")
+    private String bankNo;
 
     /**
      * 开户人
      */
+    @TableField(value = "accname")
     private String accname;
 
     /**
      *  1处理中2成功3失败4已推送处理
      */
-    private String orderstatus;
+    @TableField(value = "orderStatus")
+    private String orderStatus;
 
     /**
      * 开户行
      */
-    private String bankname;
+    @TableField(value = "bankName")
+    private String bankName;
 
     /**
      * 提现金额
      */
+    @TableField(value = "amount")
     private BigDecimal amount;
 
     /**
      * 手续费
      */
+    @TableField(value = "fee")
     private BigDecimal fee;
 
     /**
      * 真实到账金额
      */
-    private BigDecimal actualamount;
+    @TableField(value = "actualAmount")
+    private BigDecimal actualAmount;
 
     /**
      * 手机号
      */
+    @TableField(value = "mobile")
     private String mobile;
 
     /**
      * 提现成功回调地址
      */
+    @TableField(value = "notify")
     private String notify;
 
     /**
      * 数据创建时间
      */
-    private Date createtime;
+    @TableField(value = "createTime")
+    private Date createTime;
 
     /**
      * 数据修改时间
      */
-    private Date submittime;
+    @TableField(value = "submitTime")
+    private Date submitTime;
 
     /**
      * 1数据可用2数据无用
      */
+    @TableField(value = "status")
     private Integer status;
 
     /**
      * 代付产品类型
      */
-    private String wittype;
+    @TableField(value = "witType")
+    private String witType;
 
     /**
      * 代付下游商户订单号
      */
-    private String apporderid;
+    @TableField(value = "appOrderId")
+    private String appOrderId;
 
     /**
      * 用户代付权重
      */
+    @TableField(value = "weight")
     private String weight;
 
     /**
      * 代付来源  1API   2后台   3 码商客户端
      */
+    @TableField(value = "retain1")
     private String retain1;
 
     /**
      * 代付发起ip地址
      */
+    @TableField(value = "retain2")
     private String retain2;
 
     /**
      * 商户后台管理员（申请人）
      */
+    @TableField(value = "apply")
     private String apply;
 
     /**
      * 审核人
      */
+    @TableField(value = "approval")
     private String approval;
 
     /**
      * 审核意见
      */
+    @TableField(value = "comment")
     private String comment;
 
     /**
      * 如果是银行代付 银行标识号
      */
+    @TableField(value = "bankcode")
     private String bankcode;
 
     /**
      * 代付渠道
      */
-    private String witchannel;
+    @TableField(value = "witChannel")
+    private String witChannel;
 
     /**
      * 当匹配的出款渠道为自营渠道时候实际手动出款渠道
      */
-    private String channelid;
+    @TableField(value = "channelId")
+    private String channelId;
 
     /**
      * 货币类型
      */
+    @TableField(value = "currency")
     private String currency;
 
     /**
      * eth手续费是否结算，1已结算2未结算
      */
-    private Integer ethfee;
+    @TableField(value = "ethFee")
+    private Integer ethFee;
 
     /**
      * usdt交易hash唯一值
      */
+    @TableField(value = "txhash")
     private String txhash;
 
     /**
      * 是否推送代付订单， 1 已推送  0 未推送，默认为已推送
      */
-    private Integer pushorder;
+    @TableField(value = "pushOrder")
+    private Integer pushOrder;
 
     /**
      * 
      */
+    @TableField(value = "sgin")
     private String sgin;
 
     /**
      * 
      */
+    @TableField(value = "amount1")
     private String amount1;
 
     /**
      * 
      */
-    private String actualamount1;
+    @TableField(value = "actualAmount1")
+    private String actualAmount1;
 
     /**
      * 
      */
+    @TableField(value = "fee1")
     private String fee1;
 
     /**
      * 
      */
+    @TableField(value = "exported")
     private Integer exported;
 
     /**
      * 请求数据
      */
+    @TableField(value = "request")
     private String request;
 
     /**
      * 响应
      */
+    @TableField(value = "response")
     private String response;
 
     /**
      * 1 扣款结算     0 未扣款结算
      */
-    private Integer paystatus;
+    @TableField(value = "payStatus")
+    private Integer payStatus;
 
     /**
      * 等待推送时间
      */
-    private Integer watingtime;
+    @TableField(value = "watingTime")
+    private Integer watingTime;
 
     /**
      * 0 不挂起，1挂起 就是停止操作
      */
-    private Integer moremacth;
+    @TableField(value = "moreMacth")
+    private Integer moreMacth;
 
     /**
      * 备注
      */
-    private String dealdescribe;
+    @TableField(value = "dealDescribe")
+    private String dealDescribe;
 
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
@@ -250,57 +286,57 @@ public class Withdraw implements Serializable {
     /**
      * 会员提现单号
      */
-    public String getOrderid() {
-        return orderid;
+    public String getOrderId() {
+        return orderId;
     }
 
     /**
      * 会员提现单号
      */
-    public void setOrderid(String orderid) {
-        this.orderid = orderid;
+    public void setOrderId(String orderId) {
+        this.orderId = orderId;
     }
 
     /**
      * 会员id(唯一识别号)(index索引)
      */
-    public String getUserid() {
-        return userid;
+    public String getUserId() {
+        return userId;
     }
 
     /**
      * 会员id(唯一识别号)(index索引)
      */
-    public void setUserid(String userid) {
-        this.userid = userid;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     /**
      * 商户提现1，码商提现2
      */
-    public String getWithdrawtype() {
-        return withdrawtype;
+    public String getWithdrawType() {
+        return withdrawType;
     }
 
     /**
      * 商户提现1，码商提现2
      */
-    public void setWithdrawtype(String withdrawtype) {
-        this.withdrawtype = withdrawtype;
+    public void setWithdrawType(String withdrawType) {
+        this.withdrawType = withdrawType;
     }
 
     /**
      * 银行卡号
      */
-    public String getBankno() {
-        return bankno;
+    public String getBankNo() {
+        return bankNo;
     }
 
     /**
      * 银行卡号
      */
-    public void setBankno(String bankno) {
-        this.bankno = bankno;
+    public void setBankNo(String bankNo) {
+        this.bankNo = bankNo;
     }
 
     /**
@@ -320,29 +356,29 @@ public class Withdraw implements Serializable {
     /**
      *  1处理中2成功3失败4已推送处理
      */
-    public String getOrderstatus() {
-        return orderstatus;
+    public String getOrderStatus() {
+        return orderStatus;
     }
 
     /**
      *  1处理中2成功3失败4已推送处理
      */
-    public void setOrderstatus(String orderstatus) {
-        this.orderstatus = orderstatus;
+    public void setOrderStatus(String orderStatus) {
+        this.orderStatus = orderStatus;
     }
 
     /**
      * 开户行
      */
-    public String getBankname() {
-        return bankname;
+    public String getBankName() {
+        return bankName;
     }
 
     /**
      * 开户行
      */
-    public void setBankname(String bankname) {
-        this.bankname = bankname;
+    public void setBankName(String bankName) {
+        this.bankName = bankName;
     }
 
     /**
@@ -376,15 +412,15 @@ public class Withdraw implements Serializable {
     /**
      * 真实到账金额
      */
-    public BigDecimal getActualamount() {
-        return actualamount;
+    public BigDecimal getActualAmount() {
+        return actualAmount;
     }
 
     /**
      * 真实到账金额
      */
-    public void setActualamount(BigDecimal actualamount) {
-        this.actualamount = actualamount;
+    public void setActualAmount(BigDecimal actualAmount) {
+        this.actualAmount = actualAmount;
     }
 
     /**
@@ -418,29 +454,29 @@ public class Withdraw implements Serializable {
     /**
      * 数据创建时间
      */
-    public Date getCreatetime() {
-        return createtime;
+    public Date getCreateTime() {
+        return createTime;
     }
 
     /**
      * 数据创建时间
      */
-    public void setCreatetime(Date createtime) {
-        this.createtime = createtime;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     /**
      * 数据修改时间
      */
-    public Date getSubmittime() {
-        return submittime;
+    public Date getSubmitTime() {
+        return submitTime;
     }
 
     /**
      * 数据修改时间
      */
-    public void setSubmittime(Date submittime) {
-        this.submittime = submittime;
+    public void setSubmitTime(Date submitTime) {
+        this.submitTime = submitTime;
     }
 
     /**
@@ -460,29 +496,29 @@ public class Withdraw implements Serializable {
     /**
      * 代付产品类型
      */
-    public String getWittype() {
-        return wittype;
+    public String getWitType() {
+        return witType;
     }
 
     /**
      * 代付产品类型
      */
-    public void setWittype(String wittype) {
-        this.wittype = wittype;
+    public void setWitType(String witType) {
+        this.witType = witType;
     }
 
     /**
      * 代付下游商户订单号
      */
-    public String getApporderid() {
-        return apporderid;
+    public String getAppOrderId() {
+        return appOrderId;
     }
 
     /**
      * 代付下游商户订单号
      */
-    public void setApporderid(String apporderid) {
-        this.apporderid = apporderid;
+    public void setAppOrderId(String appOrderId) {
+        this.appOrderId = appOrderId;
     }
 
     /**
@@ -586,29 +622,29 @@ public class Withdraw implements Serializable {
     /**
      * 代付渠道
      */
-    public String getWitchannel() {
-        return witchannel;
+    public String getWitChannel() {
+        return witChannel;
     }
 
     /**
      * 代付渠道
      */
-    public void setWitchannel(String witchannel) {
-        this.witchannel = witchannel;
+    public void setWitChannel(String witChannel) {
+        this.witChannel = witChannel;
     }
 
     /**
      * 当匹配的出款渠道为自营渠道时候实际手动出款渠道
      */
-    public String getChannelid() {
-        return channelid;
+    public String getChannelId() {
+        return channelId;
     }
 
     /**
      * 当匹配的出款渠道为自营渠道时候实际手动出款渠道
      */
-    public void setChannelid(String channelid) {
-        this.channelid = channelid;
+    public void setChannelId(String channelId) {
+        this.channelId = channelId;
     }
 
     /**
@@ -628,15 +664,15 @@ public class Withdraw implements Serializable {
     /**
      * eth手续费是否结算，1已结算2未结算
      */
-    public Integer getEthfee() {
-        return ethfee;
+    public Integer getEthFee() {
+        return ethFee;
     }
 
     /**
      * eth手续费是否结算，1已结算2未结算
      */
-    public void setEthfee(Integer ethfee) {
-        this.ethfee = ethfee;
+    public void setEthFee(Integer ethFee) {
+        this.ethFee = ethFee;
     }
 
     /**
@@ -656,15 +692,15 @@ public class Withdraw implements Serializable {
     /**
      * 是否推送代付订单， 1 已推送  0 未推送，默认为已推送
      */
-    public Integer getPushorder() {
-        return pushorder;
+    public Integer getPushOrder() {
+        return pushOrder;
     }
 
     /**
      * 是否推送代付订单， 1 已推送  0 未推送，默认为已推送
      */
-    public void setPushorder(Integer pushorder) {
-        this.pushorder = pushorder;
+    public void setPushOrder(Integer pushOrder) {
+        this.pushOrder = pushOrder;
     }
 
     /**
@@ -698,15 +734,15 @@ public class Withdraw implements Serializable {
     /**
      * 
      */
-    public String getActualamount1() {
-        return actualamount1;
+    public String getActualAmount1() {
+        return actualAmount1;
     }
 
     /**
      * 
      */
-    public void setActualamount1(String actualamount1) {
-        this.actualamount1 = actualamount1;
+    public void setActualAmount1(String actualAmount1) {
+        this.actualAmount1 = actualAmount1;
     }
 
     /**
@@ -768,57 +804,57 @@ public class Withdraw implements Serializable {
     /**
      * 1 扣款结算     0 未扣款结算
      */
-    public Integer getPaystatus() {
-        return paystatus;
+    public Integer getPayStatus() {
+        return payStatus;
     }
 
     /**
      * 1 扣款结算     0 未扣款结算
      */
-    public void setPaystatus(Integer paystatus) {
-        this.paystatus = paystatus;
+    public void setPayStatus(Integer payStatus) {
+        this.payStatus = payStatus;
     }
 
     /**
      * 等待推送时间
      */
-    public Integer getWatingtime() {
-        return watingtime;
+    public Integer getWatingTime() {
+        return watingTime;
     }
 
     /**
      * 等待推送时间
      */
-    public void setWatingtime(Integer watingtime) {
-        this.watingtime = watingtime;
+    public void setWatingTime(Integer watingTime) {
+        this.watingTime = watingTime;
     }
 
     /**
      * 0 不挂起，1挂起 就是停止操作
      */
-    public Integer getMoremacth() {
-        return moremacth;
+    public Integer getMoreMacth() {
+        return moreMacth;
     }
 
     /**
      * 0 不挂起，1挂起 就是停止操作
      */
-    public void setMoremacth(Integer moremacth) {
-        this.moremacth = moremacth;
+    public void setMoreMacth(Integer moreMacth) {
+        this.moreMacth = moreMacth;
     }
 
     /**
      * 备注
      */
-    public String getDealdescribe() {
-        return dealdescribe;
+    public String getDealDescribe() {
+        return dealDescribe;
     }
 
     /**
      * 备注
      */
-    public void setDealdescribe(String dealdescribe) {
-        this.dealdescribe = dealdescribe;
+    public void setDealDescribe(String dealDescribe) {
+        this.dealDescribe = dealDescribe;
     }
 
     @Override
@@ -834,23 +870,23 @@ public class Withdraw implements Serializable {
         }
         Withdraw other = (Withdraw) that;
         return (this.getId() == null ? other.getId() == null : this.getId().equals(other.getId()))
-            && (this.getOrderid() == null ? other.getOrderid() == null : this.getOrderid().equals(other.getOrderid()))
-            && (this.getUserid() == null ? other.getUserid() == null : this.getUserid().equals(other.getUserid()))
-            && (this.getWithdrawtype() == null ? other.getWithdrawtype() == null : this.getWithdrawtype().equals(other.getWithdrawtype()))
-            && (this.getBankno() == null ? other.getBankno() == null : this.getBankno().equals(other.getBankno()))
+            && (this.getOrderId() == null ? other.getOrderId() == null : this.getOrderId().equals(other.getOrderId()))
+            && (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
+            && (this.getWithdrawType() == null ? other.getWithdrawType() == null : this.getWithdrawType().equals(other.getWithdrawType()))
+            && (this.getBankNo() == null ? other.getBankNo() == null : this.getBankNo().equals(other.getBankNo()))
             && (this.getAccname() == null ? other.getAccname() == null : this.getAccname().equals(other.getAccname()))
-            && (this.getOrderstatus() == null ? other.getOrderstatus() == null : this.getOrderstatus().equals(other.getOrderstatus()))
-            && (this.getBankname() == null ? other.getBankname() == null : this.getBankname().equals(other.getBankname()))
+            && (this.getOrderStatus() == null ? other.getOrderStatus() == null : this.getOrderStatus().equals(other.getOrderStatus()))
+            && (this.getBankName() == null ? other.getBankName() == null : this.getBankName().equals(other.getBankName()))
             && (this.getAmount() == null ? other.getAmount() == null : this.getAmount().equals(other.getAmount()))
             && (this.getFee() == null ? other.getFee() == null : this.getFee().equals(other.getFee()))
-            && (this.getActualamount() == null ? other.getActualamount() == null : this.getActualamount().equals(other.getActualamount()))
+            && (this.getActualAmount() == null ? other.getActualAmount() == null : this.getActualAmount().equals(other.getActualAmount()))
             && (this.getMobile() == null ? other.getMobile() == null : this.getMobile().equals(other.getMobile()))
             && (this.getNotify() == null ? other.getNotify() == null : this.getNotify().equals(other.getNotify()))
-            && (this.getCreatetime() == null ? other.getCreatetime() == null : this.getCreatetime().equals(other.getCreatetime()))
-            && (this.getSubmittime() == null ? other.getSubmittime() == null : this.getSubmittime().equals(other.getSubmittime()))
+            && (this.getCreateTime() == null ? other.getCreateTime() == null : this.getCreateTime().equals(other.getCreateTime()))
+            && (this.getSubmitTime() == null ? other.getSubmitTime() == null : this.getSubmitTime().equals(other.getSubmitTime()))
             && (this.getStatus() == null ? other.getStatus() == null : this.getStatus().equals(other.getStatus()))
-            && (this.getWittype() == null ? other.getWittype() == null : this.getWittype().equals(other.getWittype()))
-            && (this.getApporderid() == null ? other.getApporderid() == null : this.getApporderid().equals(other.getApporderid()))
+            && (this.getWitType() == null ? other.getWitType() == null : this.getWitType().equals(other.getWitType()))
+            && (this.getAppOrderId() == null ? other.getAppOrderId() == null : this.getAppOrderId().equals(other.getAppOrderId()))
             && (this.getWeight() == null ? other.getWeight() == null : this.getWeight().equals(other.getWeight()))
             && (this.getRetain1() == null ? other.getRetain1() == null : this.getRetain1().equals(other.getRetain1()))
             && (this.getRetain2() == null ? other.getRetain2() == null : this.getRetain2().equals(other.getRetain2()))
@@ -858,23 +894,23 @@ public class Withdraw implements Serializable {
             && (this.getApproval() == null ? other.getApproval() == null : this.getApproval().equals(other.getApproval()))
             && (this.getComment() == null ? other.getComment() == null : this.getComment().equals(other.getComment()))
             && (this.getBankcode() == null ? other.getBankcode() == null : this.getBankcode().equals(other.getBankcode()))
-            && (this.getWitchannel() == null ? other.getWitchannel() == null : this.getWitchannel().equals(other.getWitchannel()))
-            && (this.getChannelid() == null ? other.getChannelid() == null : this.getChannelid().equals(other.getChannelid()))
+            && (this.getWitChannel() == null ? other.getWitChannel() == null : this.getWitChannel().equals(other.getWitChannel()))
+            && (this.getChannelId() == null ? other.getChannelId() == null : this.getChannelId().equals(other.getChannelId()))
             && (this.getCurrency() == null ? other.getCurrency() == null : this.getCurrency().equals(other.getCurrency()))
-            && (this.getEthfee() == null ? other.getEthfee() == null : this.getEthfee().equals(other.getEthfee()))
+            && (this.getEthFee() == null ? other.getEthFee() == null : this.getEthFee().equals(other.getEthFee()))
             && (this.getTxhash() == null ? other.getTxhash() == null : this.getTxhash().equals(other.getTxhash()))
-            && (this.getPushorder() == null ? other.getPushorder() == null : this.getPushorder().equals(other.getPushorder()))
+            && (this.getPushOrder() == null ? other.getPushOrder() == null : this.getPushOrder().equals(other.getPushOrder()))
             && (this.getSgin() == null ? other.getSgin() == null : this.getSgin().equals(other.getSgin()))
             && (this.getAmount1() == null ? other.getAmount1() == null : this.getAmount1().equals(other.getAmount1()))
-            && (this.getActualamount1() == null ? other.getActualamount1() == null : this.getActualamount1().equals(other.getActualamount1()))
+            && (this.getActualAmount1() == null ? other.getActualAmount1() == null : this.getActualAmount1().equals(other.getActualAmount1()))
             && (this.getFee1() == null ? other.getFee1() == null : this.getFee1().equals(other.getFee1()))
             && (this.getExported() == null ? other.getExported() == null : this.getExported().equals(other.getExported()))
             && (this.getRequest() == null ? other.getRequest() == null : this.getRequest().equals(other.getRequest()))
             && (this.getResponse() == null ? other.getResponse() == null : this.getResponse().equals(other.getResponse()))
-            && (this.getPaystatus() == null ? other.getPaystatus() == null : this.getPaystatus().equals(other.getPaystatus()))
-            && (this.getWatingtime() == null ? other.getWatingtime() == null : this.getWatingtime().equals(other.getWatingtime()))
-            && (this.getMoremacth() == null ? other.getMoremacth() == null : this.getMoremacth().equals(other.getMoremacth()))
-            && (this.getDealdescribe() == null ? other.getDealdescribe() == null : this.getDealdescribe().equals(other.getDealdescribe()));
+            && (this.getPayStatus() == null ? other.getPayStatus() == null : this.getPayStatus().equals(other.getPayStatus()))
+            && (this.getWatingTime() == null ? other.getWatingTime() == null : this.getWatingTime().equals(other.getWatingTime()))
+            && (this.getMoreMacth() == null ? other.getMoreMacth() == null : this.getMoreMacth().equals(other.getMoreMacth()))
+            && (this.getDealDescribe() == null ? other.getDealDescribe() == null : this.getDealDescribe().equals(other.getDealDescribe()));
     }
 
     @Override
@@ -882,23 +918,23 @@ public class Withdraw implements Serializable {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((getId() == null) ? 0 : getId().hashCode());
-        result = prime * result + ((getOrderid() == null) ? 0 : getOrderid().hashCode());
-        result = prime * result + ((getUserid() == null) ? 0 : getUserid().hashCode());
-        result = prime * result + ((getWithdrawtype() == null) ? 0 : getWithdrawtype().hashCode());
-        result = prime * result + ((getBankno() == null) ? 0 : getBankno().hashCode());
+        result = prime * result + ((getOrderId() == null) ? 0 : getOrderId().hashCode());
+        result = prime * result + ((getUserId() == null) ? 0 : getUserId().hashCode());
+        result = prime * result + ((getWithdrawType() == null) ? 0 : getWithdrawType().hashCode());
+        result = prime * result + ((getBankNo() == null) ? 0 : getBankNo().hashCode());
         result = prime * result + ((getAccname() == null) ? 0 : getAccname().hashCode());
-        result = prime * result + ((getOrderstatus() == null) ? 0 : getOrderstatus().hashCode());
-        result = prime * result + ((getBankname() == null) ? 0 : getBankname().hashCode());
+        result = prime * result + ((getOrderStatus() == null) ? 0 : getOrderStatus().hashCode());
+        result = prime * result + ((getBankName() == null) ? 0 : getBankName().hashCode());
         result = prime * result + ((getAmount() == null) ? 0 : getAmount().hashCode());
         result = prime * result + ((getFee() == null) ? 0 : getFee().hashCode());
-        result = prime * result + ((getActualamount() == null) ? 0 : getActualamount().hashCode());
+        result = prime * result + ((getActualAmount() == null) ? 0 : getActualAmount().hashCode());
         result = prime * result + ((getMobile() == null) ? 0 : getMobile().hashCode());
         result = prime * result + ((getNotify() == null) ? 0 : getNotify().hashCode());
-        result = prime * result + ((getCreatetime() == null) ? 0 : getCreatetime().hashCode());
-        result = prime * result + ((getSubmittime() == null) ? 0 : getSubmittime().hashCode());
+        result = prime * result + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode());
+        result = prime * result + ((getSubmitTime() == null) ? 0 : getSubmitTime().hashCode());
         result = prime * result + ((getStatus() == null) ? 0 : getStatus().hashCode());
-        result = prime * result + ((getWittype() == null) ? 0 : getWittype().hashCode());
-        result = prime * result + ((getApporderid() == null) ? 0 : getApporderid().hashCode());
+        result = prime * result + ((getWitType() == null) ? 0 : getWitType().hashCode());
+        result = prime * result + ((getAppOrderId() == null) ? 0 : getAppOrderId().hashCode());
         result = prime * result + ((getWeight() == null) ? 0 : getWeight().hashCode());
         result = prime * result + ((getRetain1() == null) ? 0 : getRetain1().hashCode());
         result = prime * result + ((getRetain2() == null) ? 0 : getRetain2().hashCode());
@@ -906,23 +942,23 @@ public class Withdraw implements Serializable {
         result = prime * result + ((getApproval() == null) ? 0 : getApproval().hashCode());
         result = prime * result + ((getComment() == null) ? 0 : getComment().hashCode());
         result = prime * result + ((getBankcode() == null) ? 0 : getBankcode().hashCode());
-        result = prime * result + ((getWitchannel() == null) ? 0 : getWitchannel().hashCode());
-        result = prime * result + ((getChannelid() == null) ? 0 : getChannelid().hashCode());
+        result = prime * result + ((getWitChannel() == null) ? 0 : getWitChannel().hashCode());
+        result = prime * result + ((getChannelId() == null) ? 0 : getChannelId().hashCode());
         result = prime * result + ((getCurrency() == null) ? 0 : getCurrency().hashCode());
-        result = prime * result + ((getEthfee() == null) ? 0 : getEthfee().hashCode());
+        result = prime * result + ((getEthFee() == null) ? 0 : getEthFee().hashCode());
         result = prime * result + ((getTxhash() == null) ? 0 : getTxhash().hashCode());
-        result = prime * result + ((getPushorder() == null) ? 0 : getPushorder().hashCode());
+        result = prime * result + ((getPushOrder() == null) ? 0 : getPushOrder().hashCode());
         result = prime * result + ((getSgin() == null) ? 0 : getSgin().hashCode());
         result = prime * result + ((getAmount1() == null) ? 0 : getAmount1().hashCode());
-        result = prime * result + ((getActualamount1() == null) ? 0 : getActualamount1().hashCode());
+        result = prime * result + ((getActualAmount1() == null) ? 0 : getActualAmount1().hashCode());
         result = prime * result + ((getFee1() == null) ? 0 : getFee1().hashCode());
         result = prime * result + ((getExported() == null) ? 0 : getExported().hashCode());
         result = prime * result + ((getRequest() == null) ? 0 : getRequest().hashCode());
         result = prime * result + ((getResponse() == null) ? 0 : getResponse().hashCode());
-        result = prime * result + ((getPaystatus() == null) ? 0 : getPaystatus().hashCode());
-        result = prime * result + ((getWatingtime() == null) ? 0 : getWatingtime().hashCode());
-        result = prime * result + ((getMoremacth() == null) ? 0 : getMoremacth().hashCode());
-        result = prime * result + ((getDealdescribe() == null) ? 0 : getDealdescribe().hashCode());
+        result = prime * result + ((getPayStatus() == null) ? 0 : getPayStatus().hashCode());
+        result = prime * result + ((getWatingTime() == null) ? 0 : getWatingTime().hashCode());
+        result = prime * result + ((getMoreMacth() == null) ? 0 : getMoreMacth().hashCode());
+        result = prime * result + ((getDealDescribe() == null) ? 0 : getDealDescribe().hashCode());
         return result;
     }
 
@@ -933,23 +969,23 @@ public class Withdraw implements Serializable {
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
         sb.append(", id=").append(id);
-        sb.append(", orderid=").append(orderid);
-        sb.append(", userid=").append(userid);
-        sb.append(", withdrawtype=").append(withdrawtype);
-        sb.append(", bankno=").append(bankno);
+        sb.append(", orderId=").append(orderId);
+        sb.append(", userId=").append(userId);
+        sb.append(", withdrawType=").append(withdrawType);
+        sb.append(", bankNo=").append(bankNo);
         sb.append(", accname=").append(accname);
-        sb.append(", orderstatus=").append(orderstatus);
-        sb.append(", bankname=").append(bankname);
+        sb.append(", orderStatus=").append(orderStatus);
+        sb.append(", bankName=").append(bankName);
         sb.append(", amount=").append(amount);
         sb.append(", fee=").append(fee);
-        sb.append(", actualamount=").append(actualamount);
+        sb.append(", actualAmount=").append(actualAmount);
         sb.append(", mobile=").append(mobile);
         sb.append(", notify=").append(notify);
-        sb.append(", createtime=").append(createtime);
-        sb.append(", submittime=").append(submittime);
+        sb.append(", createTime=").append(createTime);
+        sb.append(", submitTime=").append(submitTime);
         sb.append(", status=").append(status);
-        sb.append(", wittype=").append(wittype);
-        sb.append(", apporderid=").append(apporderid);
+        sb.append(", witType=").append(witType);
+        sb.append(", appOrderId=").append(appOrderId);
         sb.append(", weight=").append(weight);
         sb.append(", retain1=").append(retain1);
         sb.append(", retain2=").append(retain2);
@@ -957,23 +993,23 @@ public class Withdraw implements Serializable {
         sb.append(", approval=").append(approval);
         sb.append(", comment=").append(comment);
         sb.append(", bankcode=").append(bankcode);
-        sb.append(", witchannel=").append(witchannel);
-        sb.append(", channelid=").append(channelid);
+        sb.append(", witChannel=").append(witChannel);
+        sb.append(", channelId=").append(channelId);
         sb.append(", currency=").append(currency);
-        sb.append(", ethfee=").append(ethfee);
+        sb.append(", ethFee=").append(ethFee);
         sb.append(", txhash=").append(txhash);
-        sb.append(", pushorder=").append(pushorder);
+        sb.append(", pushOrder=").append(pushOrder);
         sb.append(", sgin=").append(sgin);
         sb.append(", amount1=").append(amount1);
-        sb.append(", actualamount1=").append(actualamount1);
+        sb.append(", actualAmount1=").append(actualAmount1);
         sb.append(", fee1=").append(fee1);
         sb.append(", exported=").append(exported);
         sb.append(", request=").append(request);
         sb.append(", response=").append(response);
-        sb.append(", paystatus=").append(paystatus);
-        sb.append(", watingtime=").append(watingtime);
-        sb.append(", moremacth=").append(moremacth);
-        sb.append(", dealdescribe=").append(dealdescribe);
+        sb.append(", payStatus=").append(payStatus);
+        sb.append(", watingTime=").append(watingTime);
+        sb.append(", moreMacth=").append(moreMacth);
+        sb.append(", dealDescribe=").append(dealDescribe);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

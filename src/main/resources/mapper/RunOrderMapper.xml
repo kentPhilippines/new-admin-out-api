@@ -6,21 +6,21 @@
 
     <resultMap id="BaseResultMap" type="com.admin.out.api.newadminoutapi.dao.domain.RunOrder">
             <id property="id" column="id" jdbcType="INTEGER"/>
-            <result property="orderid" column="orderId" jdbcType="CHAR"/>
-            <result property="associatedid" column="associatedId" jdbcType="CHAR"/>
-            <result property="orderaccount" column="orderAccount" jdbcType="CHAR"/>
-            <result property="runordertype" column="runOrderType" jdbcType="INTEGER"/>
+            <result property="orderId" column="orderId" jdbcType="CHAR"/>
+            <result property="associatedId" column="associatedId" jdbcType="CHAR"/>
+            <result property="orderAccount" column="orderAccount" jdbcType="CHAR"/>
+            <result property="runOrderType" column="runOrderType" jdbcType="INTEGER"/>
             <result property="amount" column="amount" jdbcType="DECIMAL"/>
-            <result property="generationip" column="generationIp" jdbcType="CHAR"/>
-            <result property="dealdescribe" column="dealDescribe" jdbcType="VARCHAR"/>
-            <result property="acountr" column="acountR" jdbcType="VARCHAR"/>
-            <result property="accountw" column="accountW" jdbcType="VARCHAR"/>
-            <result property="createtime" column="createTime" jdbcType="TIMESTAMP"/>
-            <result property="submittime" column="submitTime" jdbcType="TIMESTAMP"/>
+            <result property="generationIp" column="generationIp" jdbcType="CHAR"/>
+            <result property="dealDescribe" column="dealDescribe" jdbcType="VARCHAR"/>
+            <result property="acountR" column="acountR" jdbcType="VARCHAR"/>
+            <result property="accountW" column="accountW" jdbcType="VARCHAR"/>
+            <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
+            <result property="submitTime" column="submitTime" jdbcType="TIMESTAMP"/>
             <result property="status" column="status" jdbcType="INTEGER"/>
-            <result property="runtype" column="runType" jdbcType="CHAR"/>
-            <result property="amounttype" column="amountType" jdbcType="CHAR"/>
-            <result property="amountnow" column="amountNow" jdbcType="DECIMAL"/>
+            <result property="runType" column="runType" jdbcType="CHAR"/>
+            <result property="amountType" column="amountType" jdbcType="CHAR"/>
+            <result property="amountNow" column="amountNow" jdbcType="DECIMAL"/>
             <result property="retain4" column="retain4" jdbcType="CHAR"/>
             <result property="retain5" column="retain5" jdbcType="CHAR"/>
     </resultMap>

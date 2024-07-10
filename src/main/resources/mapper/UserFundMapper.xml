@@ -6,34 +6,34 @@
 
     <resultMap id="BaseResultMap" type="com.admin.out.api.newadminoutapi.dao.domain.UserFund">
             <id property="id" column="id" jdbcType="INTEGER"/>
-            <result property="userid" column="userId" jdbcType="VARCHAR"/>
-            <result property="username" column="userName" jdbcType="VARCHAR"/>
-            <result property="cashbalance" column="cashBalance" jdbcType="DECIMAL"/>
-            <result property="rechargenumber" column="rechargeNumber" jdbcType="DECIMAL"/>
-            <result property="freezebalance" column="freezeBalance" jdbcType="DECIMAL"/>
-            <result property="accountbalance" column="accountBalance" jdbcType="DECIMAL"/>
-            <result property="sumdealamount" column="sumDealAmount" jdbcType="DECIMAL"/>
-            <result property="sumrechargeamount" column="sumRechargeAmount" jdbcType="DECIMAL"/>
-            <result property="sumprofit" column="sumProfit" jdbcType="DECIMAL"/>
-            <result property="sumwitamount" column="sumWitAmount" jdbcType="DECIMAL"/>
-            <result property="sumagentprofit" column="sumAgentProfit" jdbcType="DECIMAL"/>
-            <result property="sumordercount" column="sumOrderCount" jdbcType="INTEGER"/>
-            <result property="todaywitamount" column="todayWitAmount" jdbcType="DECIMAL"/>
-            <result property="todaydealamount" column="todayDealAmount" jdbcType="DECIMAL"/>
-            <result property="todayprofit" column="todayProfit" jdbcType="DECIMAL"/>
-            <result property="todayordercount" column="todayOrderCount" jdbcType="INTEGER"/>
-            <result property="todayagentprofit" column="todayAgentProfit" jdbcType="DECIMAL"/>
-            <result property="usertype" column="userType" jdbcType="CHAR"/>
+            <result property="userId" column="userId" jdbcType="VARCHAR"/>
+            <result property="userName" column="userName" jdbcType="VARCHAR"/>
+            <result property="cashBalance" column="cashBalance" jdbcType="DECIMAL"/>
+            <result property="rechargeNumber" column="rechargeNumber" jdbcType="DECIMAL"/>
+            <result property="freezeBalance" column="freezeBalance" jdbcType="DECIMAL"/>
+            <result property="accountBalance" column="accountBalance" jdbcType="DECIMAL"/>
+            <result property="sumDealAmount" column="sumDealAmount" jdbcType="DECIMAL"/>
+            <result property="sumRechargeAmount" column="sumRechargeAmount" jdbcType="DECIMAL"/>
+            <result property="sumProfit" column="sumProfit" jdbcType="DECIMAL"/>
+            <result property="sumWitAmount" column="sumWitAmount" jdbcType="DECIMAL"/>
+            <result property="sumAgentProfit" column="sumAgentProfit" jdbcType="DECIMAL"/>
+            <result property="sumOrderCount" column="sumOrderCount" jdbcType="INTEGER"/>
+            <result property="todayWitAmount" column="todayWitAmount" jdbcType="DECIMAL"/>
+            <result property="todayDealAmount" column="todayDealAmount" jdbcType="DECIMAL"/>
+            <result property="todayProfit" column="todayProfit" jdbcType="DECIMAL"/>
+            <result property="todayOrderCount" column="todayOrderCount" jdbcType="INTEGER"/>
+            <result property="todayAgentProfit" column="todayAgentProfit" jdbcType="DECIMAL"/>
+            <result property="userType" column="userType" jdbcType="CHAR"/>
             <result property="agent" column="agent" jdbcType="VARCHAR"/>
-            <result property="isagent" column="isAgent" jdbcType="CHAR"/>
-            <result property="createtime" column="createTime" jdbcType="TIMESTAMP"/>
-            <result property="submittime" column="submitTime" jdbcType="TIMESTAMP"/>
+            <result property="isAgent" column="isAgent" jdbcType="CHAR"/>
+            <result property="createTime" column="createTime" jdbcType="TIMESTAMP"/>
+            <result property="submitTime" column="submitTime" jdbcType="TIMESTAMP"/>
             <result property="status" column="status" jdbcType="INTEGER"/>
             <result property="version" column="version" jdbcType="INTEGER"/>
             <result property="currency" column="currency" jdbcType="VARCHAR"/>
             <result property="quota" column="quota" jdbcType="DECIMAL"/>
-            <result property="sumotherwitamount" column="sumOtherWitAmount" jdbcType="DECIMAL"/>
-            <result property="todayotherwitamount" column="todayOtherWitAmount" jdbcType="DECIMAL"/>
+            <result property="sumOtherWitAmount" column="sumOtherWitAmount" jdbcType="DECIMAL"/>
+            <result property="todayOtherWitAmount" column="todayOtherWitAmount" jdbcType="DECIMAL"/>
             <result property="deposit" column="deposit" jdbcType="DECIMAL"/>
     </resultMap>
 
