@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.admin.out.api.newadminoutapi.dao.mapper.WithdrawMapper">
+
+    <resultMap id="BaseResultMap" type="com.admin.out.api.newadminoutapi.dao.domain.Withdraw">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="orderid" column="orderId" jdbcType="CHAR"/>
+            <result property="userid" column="userId" jdbcType="VARCHAR"/>
+            <result property="withdrawtype" column="withdrawType" jdbcType="CHAR"/>
+            <result property="bankno" column="bankNo" jdbcType="VARCHAR"/>
+            <result property="accname" column="accname" jdbcType="VARCHAR"/>
+            <result property="orderstatus" column="orderStatus" jdbcType="CHAR"/>
+            <result property="bankname" column="bankName" jdbcType="VARCHAR"/>
+            <result property="amount" column="amount" jdbcType="DECIMAL"/>
+            <result property="fee" column="fee" jdbcType="DECIMAL"/>
+            <result property="actualamount" column="actualAmount" jdbcType="DECIMAL"/>
+            <result property="mobile" column="mobile" jdbcType="CHAR"/>
+            <result property="notify" column="notify" jdbcType="VARCHAR"/>
+            <result property="createtime" column="createTime" jdbcType="TIMESTAMP"/>
+            <result property="submittime" column="submitTime" jdbcType="TIMESTAMP"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+            <result property="wittype" column="witType" jdbcType="VARCHAR"/>
+            <result property="apporderid" column="appOrderId" jdbcType="VARCHAR"/>
+            <result property="weight" column="weight" jdbcType="VARCHAR"/>
+            <result property="retain1" column="retain1" jdbcType="CHAR"/>
+            <result property="retain2" column="retain2" jdbcType="CHAR"/>
+            <result property="apply" column="apply" jdbcType="VARCHAR"/>
+            <result property="approval" column="approval" jdbcType="VARCHAR"/>
+            <result property="comment" column="comment" jdbcType="VARCHAR"/>
+            <result property="bankcode" column="bankcode" jdbcType="VARCHAR"/>
+            <result property="witchannel" column="witChannel" jdbcType="VARCHAR"/>
+            <result property="channelid" column="channelId" jdbcType="VARCHAR"/>
+            <result property="currency" column="currency" jdbcType="VARCHAR"/>
+            <result property="ethfee" column="ethFee" jdbcType="INTEGER"/>
+            <result property="txhash" column="txhash" jdbcType="VARCHAR"/>
+            <result property="pushorder" column="pushOrder" jdbcType="INTEGER"/>
+            <result property="sgin" column="sgin" jdbcType="VARCHAR"/>
+            <result property="amount1" column="amount1" jdbcType="VARCHAR"/>
+            <result property="actualamount1" column="actualAmount1" jdbcType="VARCHAR"/>
+            <result property="fee1" column="fee1" jdbcType="VARCHAR"/>
+            <result property="exported" column="exported" jdbcType="INTEGER"/>
+            <result property="request" column="request" jdbcType="VARCHAR"/>
+            <result property="response" column="response" jdbcType="VARCHAR"/>
+            <result property="paystatus" column="payStatus" jdbcType="INTEGER"/>
+            <result property="watingtime" column="watingTime" jdbcType="INTEGER"/>
+            <result property="moremacth" column="moreMacth" jdbcType="INTEGER"/>
+            <result property="dealdescribe" column="dealDescribe" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,orderId,userId,
+        withdrawType,bankNo,accname,
+        orderStatus,bankName,amount,
+        fee,actualAmount,mobile,
+        notify,createTime,submitTime,
+        status,witType,appOrderId,
+        weight,retain1,retain2,
+        apply,approval,comment,
+        bankcode,witChannel,channelId,
+        currency,ethFee,txhash,
+        pushOrder,sgin,amount1,
+        actualAmount1,fee1,exported,
+        request,response,payStatus,
+        watingTime,moreMacth,dealDescribe
+    </sql>
+</mapper>

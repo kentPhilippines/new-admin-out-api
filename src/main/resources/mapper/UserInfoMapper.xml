@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.admin.out.api.newadminoutapi.dao.mapper.UserInfoMapper">
+
+    <resultMap id="BaseResultMap" type="com.admin.out.api.newadminoutapi.dao.domain.UserInfo">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="userid" column="userId" jdbcType="VARCHAR"/>
+            <result property="username" column="userName" jdbcType="VARCHAR"/>
+            <result property="password" column="password" jdbcType="VARCHAR"/>
+            <result property="paypasword" column="payPasword" jdbcType="VARCHAR"/>
+            <result property="salt" column="salt" jdbcType="VARCHAR"/>
+            <result property="usertype" column="userType" jdbcType="INTEGER"/>
+            <result property="switchs" column="switchs" jdbcType="INTEGER"/>
+            <result property="usernode" column="userNode" jdbcType="VARCHAR"/>
+            <result property="email" column="email" jdbcType="VARCHAR"/>
+            <result property="agent" column="agent" jdbcType="VARCHAR"/>
+            <result property="isagent" column="isAgent" jdbcType="CHAR"/>
+            <result property="credit" column="credit" jdbcType="DECIMAL"/>
+            <result property="receiveorderstate" column="receiveOrderState" jdbcType="INTEGER"/>
+            <result property="remitorderstate" column="remitOrderState" jdbcType="INTEGER"/>
+            <result property="qq" column="QQ" jdbcType="VARCHAR"/>
+            <result property="telegram" column="telegram" jdbcType="VARCHAR"/>
+            <result property="skype" column="skype" jdbcType="VARCHAR"/>
+            <result property="createtime" column="createTime" jdbcType="TIMESTAMP"/>
+            <result property="submittime" column="submitTime" jdbcType="TIMESTAMP"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+            <result property="privatekey" column="privateKey" jdbcType="VARCHAR"/>
+            <result property="publickey" column="publicKey" jdbcType="VARCHAR"/>
+            <result property="minamount" column="minAmount" jdbcType="DECIMAL"/>
+            <result property="maxamount" column="maxAmount" jdbcType="DECIMAL"/>
+            <result property="totalamount" column="totalAmount" jdbcType="DECIMAL"/>
+            <result property="timestotal" column="timesTotal" jdbcType="INTEGER"/>
+            <result property="starttime" column="startTime" jdbcType="VARCHAR"/>
+            <result property="endtime" column="endTime" jdbcType="VARCHAR"/>
+            <result property="witip" column="witip" jdbcType="VARCHAR"/>
+            <result property="queuelist" column="queueList" jdbcType="VARCHAR"/>
+            <result property="dealurl" column="dealUrl" jdbcType="VARCHAR"/>
+            <result property="qrrechargelist" column="qrRechargeList" jdbcType="VARCHAR"/>
+            <result property="autowit" column="autoWit" jdbcType="INTEGER"/>
+            <result property="enterwitopen" column="enterWitOpen" jdbcType="INTEGER"/>
+            <result property="balanceurl" column="balanceUrl" jdbcType="VARCHAR"/>
+            <result property="autowitstatus" column="autowitstatus" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,userId,userName,
+        password,payPasword,salt,
+        userType,switchs,userNode,
+        email,agent,isAgent,
+        credit,receiveOrderState,remitOrderState,
+        QQ,telegram,skype,
+        createTime,submitTime,status,
+        privateKey,publicKey,minAmount,
+        maxAmount,totalAmount,timesTotal,
+        startTime,endTime,witip,
+        queueList,dealUrl,qrRechargeList,
+        autoWit,enterWitOpen,
+        balanceUrl,autowitstatus
+    </sql>
+</mapper>

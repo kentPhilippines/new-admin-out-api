@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.admin.out.api.newadminoutapi.dao.mapper.UserFundMapper">
+
+    <resultMap id="BaseResultMap" type="com.admin.out.api.newadminoutapi.dao.domain.UserFund">
+            <id property="id" column="id" jdbcType="INTEGER"/>
+            <result property="userid" column="userId" jdbcType="VARCHAR"/>
+            <result property="username" column="userName" jdbcType="VARCHAR"/>
+            <result property="cashbalance" column="cashBalance" jdbcType="DECIMAL"/>
+            <result property="rechargenumber" column="rechargeNumber" jdbcType="DECIMAL"/>
+            <result property="freezebalance" column="freezeBalance" jdbcType="DECIMAL"/>
+            <result property="accountbalance" column="accountBalance" jdbcType="DECIMAL"/>
+            <result property="sumdealamount" column="sumDealAmount" jdbcType="DECIMAL"/>
+            <result property="sumrechargeamount" column="sumRechargeAmount" jdbcType="DECIMAL"/>
+            <result property="sumprofit" column="sumProfit" jdbcType="DECIMAL"/>
+            <result property="sumwitamount" column="sumWitAmount" jdbcType="DECIMAL"/>
+            <result property="sumagentprofit" column="sumAgentProfit" jdbcType="DECIMAL"/>
+            <result property="sumordercount" column="sumOrderCount" jdbcType="INTEGER"/>
+            <result property="todaywitamount" column="todayWitAmount" jdbcType="DECIMAL"/>
+            <result property="todaydealamount" column="todayDealAmount" jdbcType="DECIMAL"/>
+            <result property="todayprofit" column="todayProfit" jdbcType="DECIMAL"/>
+            <result property="todayordercount" column="todayOrderCount" jdbcType="INTEGER"/>
+            <result property="todayagentprofit" column="todayAgentProfit" jdbcType="DECIMAL"/>
+            <result property="usertype" column="userType" jdbcType="CHAR"/>
+            <result property="agent" column="agent" jdbcType="VARCHAR"/>
+            <result property="isagent" column="isAgent" jdbcType="CHAR"/>
+            <result property="createtime" column="createTime" jdbcType="TIMESTAMP"/>
+            <result property="submittime" column="submitTime" jdbcType="TIMESTAMP"/>
+            <result property="status" column="status" jdbcType="INTEGER"/>
+            <result property="version" column="version" jdbcType="INTEGER"/>
+            <result property="currency" column="currency" jdbcType="VARCHAR"/>
+            <result property="quota" column="quota" jdbcType="DECIMAL"/>
+            <result property="sumotherwitamount" column="sumOtherWitAmount" jdbcType="DECIMAL"/>
+            <result property="todayotherwitamount" column="todayOtherWitAmount" jdbcType="DECIMAL"/>
+            <result property="deposit" column="deposit" jdbcType="DECIMAL"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,userId,userName,
+        cashBalance,rechargeNumber,freezeBalance,
+        accountBalance,sumDealAmount,sumRechargeAmount,
+        sumProfit,sumWitAmount,sumAgentProfit,
+        sumOrderCount,todayWitAmount,todayDealAmount,
+        todayProfit,todayOrderCount,todayAgentProfit,
+        userType,agent,isAgent,
+        createTime,submitTime,status,
+        version,currency,quota,
+        sumOtherWitAmount,todayOtherWitAmount,deposit
+    </sql>
+</mapper>
