@@ -3,6 +3,7 @@ package com.admin.out.api.newadminoutapi.dao.mapper;
 import com.admin.out.api.newadminoutapi.dao.domain.DealOrderApp;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 /**
 * @author 1

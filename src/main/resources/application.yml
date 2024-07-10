@@ -1,10 +1,9 @@
-
 spring:
   datasource:
-    url: jdbc:mysql://35.220.247.103:3306/yg_api?useSSL=false
-    username: toor
-    password: 123456test
-    driverClassName:  com.mysql.jdbc.Driver
+      url: jdbc:mysql://35.220.247.103:3306/yg_api?useSSL=false
+      username: toor
+      password: 123456test
+      driverClassName: com.mysql.jdbc.Driver
 logging:
   level:
     com.admin.out.api.newadminoutapi: debug
