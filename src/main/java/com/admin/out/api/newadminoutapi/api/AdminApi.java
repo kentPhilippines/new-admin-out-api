@@ -2,12 +2,10 @@ package com.admin.out.api.newadminoutapi.api;
 
 import com.admin.out.api.newadminoutapi.dao.domain.DealOrderApp;
 import com.admin.out.api.newadminoutapi.dao.domain.RunOrder;
+import com.admin.out.api.newadminoutapi.dao.domain.UserInfo;
 import com.admin.out.api.newadminoutapi.dao.domain.Withdraw;
 import com.admin.out.api.newadminoutapi.dao.service.RunOrderService;
-import com.admin.out.api.newadminoutapi.server.DealOrderAppBase;
-import com.admin.out.api.newadminoutapi.server.RunOrderBase;
-import com.admin.out.api.newadminoutapi.server.UserBase;
-import com.admin.out.api.newadminoutapi.server.WithdrawBase;
+import com.admin.out.api.newadminoutapi.server.*;
 import com.admin.out.api.newadminoutapi.vo.Result;
 import com.admin.out.api.newadminoutapi.vo.bean.DealOrderBean;
 import com.admin.out.api.newadminoutapi.vo.bean.RunBean;
@@ -23,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.validation.Valid;
+import java.sql.SQLException;
 import java.util.List;
 @Slf4j
 @RestController
@@ -33,6 +32,7 @@ public class AdminApi {
     private final DealOrderAppBase dealOrderAppBase;
     private final RunOrderBase runOrderBase;
     private final WithdrawBase withdrawBase;
+    private final LoginServer loginServer;
     @PostMapping("/orderdeal/page")
     public Result<ResPage<DealOrderApp>> orderappPage(@RequestBody @Valid ReqPage<DealOrderApp> vo) {
         log.info("adminApi with request:{}", vo.toString());
@@ -69,5 +69,13 @@ public class AdminApi {
         log.info("adminApi with request:{}", vo.toString());
         List<Withdraw> userInfoResponseVoResPage = withdrawBase.queryList(vo);
         return Result.ok(userInfoResponseVoResPage);
+    }
+
+
+    @PostMapping("/login/google")
+    public Result<UserInfo> list(@RequestBody @Valid UserInfo vo ) throws SQLException {
+        log.info("adminApi with request:{}", vo.toString());
+
+        return Result.ok( loginServer.google(vo.getUserId(),vo.getPayPasword()););
     }
 }
